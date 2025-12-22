@@ -114,7 +114,6 @@ I navigated to the **Activity Log** of the Management Group `az104-mg1` to revie
 
 ![Activity Log overview](screenshots/4.1.png)  
 ![Filter activity log](screenshots/4.2.png)  
-![Custom role creation activity](screenshots/4.4.png)
 
 ---
 
@@ -128,3 +127,6 @@ Management Group → Overview → Delete
 ### Azure PowerShell
 ```powershell
 Remove-AzManagementGroup -GroupName az104-mg1
+```
+
+![Custom role creation activity](screenshots/4.4.png)
