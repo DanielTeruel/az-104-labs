@@ -128,5 +128,6 @@ Management Group → Overview → Delete
 ```powershell
 Remove-AzManagementGroup -GroupName az104-mg1
 ```
+Once the cleanup is completed, I navigated to the Management Groups panel to verify that the group had been successfully deleted.
 
 ![Custom role creation activity](screenshots/4.4.png)
