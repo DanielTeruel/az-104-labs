@@ -95,12 +95,9 @@ Confirm that the assignable scope is set to the Management Group `az104-mg1` and
 
 ![Exclude permissions step 2](screenshots/3.5.png) 
  
- 
-
-
-
- 
 ![Review role JSON](screenshots/3.6.png)  
+
+Once created, lets confirm it has been created correctly
 ![Custom role created](screenshots/3.7.png)
 
 ---
@@ -113,12 +110,13 @@ Review:
 - Role assignments
 - Creation of the custom RBAC role
 - Administrative changes performed during the lab
+  ![Activity Log overview](screenshots/4.1.png)  
 
-**Screenshots:**  
-![Activity Log overview](screenshots/4.1.png)  
-![Filter activity log](screenshots/4.2.png)  
-![Role assignment activity](screenshots/4.3.png)  
-![Custom role creation activity](screenshots/4.4.png)
+
+
+
+
+
 
 ---
 
@@ -129,6 +127,11 @@ To avoid unnecessary costs and configuration leftovers, delete the Management Gr
 ### Azure Portal
 Management Group → Overview → Delete
 
+![Filter activity log](screenshots/4.2.png)  
+
 ### Azure PowerShell
 ```powershell
 Remove-AzManagementGroup -GroupName az104-mg1
+
+```
+![Custom role creation activity](screenshots/4.4.png)
