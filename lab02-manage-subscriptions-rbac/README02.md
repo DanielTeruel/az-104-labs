@@ -47,9 +47,6 @@ Create a new Management Group with the following configuration:
 
 After creation, wait a few moments until the Management Group appears in the hierarchy.
 
-**Screenshots:**  
-
-
 ![Management Group visible in hierarchy](screenshots/1.3.png)
 
 ---
@@ -57,16 +54,16 @@ After creation, wait a few moments until the Management Group appears in the hie
 ## Task 2 – Assign a built-in RBAC role
 
 Inside the Management Group `az104-mg1`, navigate to **Access Control (IAM)** and select **Add → Add role assignment**.
+![Add role assignment](screenshots/2.1.png)  
 
 Assign the **Virtual Machine Contributor** role to the Help Desk group.  
+![Select VM Contributor role](screenshots/2.2.png)  
+
 This role allows management of virtual machines without granting access to the operating system or related networking and storage resources.
+![Select Help Desk group](screenshots/2.3.png)  
 
 Verify the assignment under **Access Control (IAM) → Role assignments**.
 
-**Screenshots:**  
-![Add role assignment](screenshots/2.1.png)  
-![Select VM Contributor role](screenshots/2.2.png)  
-![Select Help Desk group](screenshots/2.3.png)  
 ![Role assignment completed](screenshots/2.4.png)
 
 ---
