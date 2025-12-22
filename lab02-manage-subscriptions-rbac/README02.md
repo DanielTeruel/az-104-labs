@@ -113,7 +113,6 @@ I navigated to the **Activity Log** of the Management Group `az104-mg1` to revie
 - Other administrative changes performed during the lab
 
 ![Activity Log overview](screenshots/4.1.png)  
-![Filter activity log](screenshots/4.2.png)  
 
 ---
 
