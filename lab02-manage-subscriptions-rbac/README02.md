@@ -43,8 +43,10 @@ Create a new Management Group with the following configuration:
 
 After creation, wait a few moments until the Management Group appears in the hierarchy.
 
-**Screenshot:**  
-![Create Management Group](screenshots/01-create-management-group.png)
+**Screenshots:**  
+![Create Management Group](screenshots/1.1.png)  
+![Management Group creation in progress](screenshots/1.2.png)  
+![Management Group visible in hierarchy](screenshots/1.3.png)
 
 ---
 
@@ -52,14 +54,16 @@ After creation, wait a few moments until the Management Group appears in the hie
 
 Inside the Management Group `az104-mg1`, navigate to **Access Control (IAM)** and select **Add → Add role assignment**.
 
-Assign the **Virtual Machine Contributor** role to the Help Desk group.
-
+Assign the **Virtual Machine Contributor** role to the Help Desk group.  
 This role allows management of virtual machines without granting access to the operating system or related networking and storage resources.
 
 Verify the assignment under **Access Control (IAM) → Role assignments**.
 
-**Screenshot:**  
-![Assign VM Contributor Role](screenshots/02-assign-vm-contributor.png)
+**Screenshots:**  
+![Add role assignment](screenshots/2.1.png)  
+![Select VM Contributor role](screenshots/2.2.png)  
+![Select Help Desk group](screenshots/2.3.png)  
+![Role assignment completed](screenshots/2.4.png)
 
 ---
 
@@ -80,8 +84,14 @@ This permission is added as a **NotAction**, preventing the Help Desk team from 
 
 Confirm that the assignable scope is set to the Management Group `az104-mg1` and review the generated JSON before creating the role.
 
-**Screenshot:**  
-![Custom RBAC Role](screenshots/03-custom-rbac-role.png)
+**Screenshots:**  
+![Custom role creation start](screenshots/3.1.png)  
+![Select role to clone](screenshots/3.2.png)  
+![Enter role details](screenshots/3.3.png)  
+![Exclude permissions step 1](screenshots/3.4.png)  
+![Exclude permissions step 2](screenshots/3.5.png)  
+![Review role JSON](screenshots/3.6.png)  
+![Custom role created](screenshots/3.7.png)
 
 ---
 
@@ -94,8 +104,11 @@ Review:
 - Creation of the custom RBAC role
 - Administrative changes performed during the lab
 
-**Screenshot:**  
-![Activity Log](screenshots/04-activity-log.png)
+**Screenshots:**  
+![Activity Log overview](screenshots/4.1.png)  
+![Filter activity log](screenshots/4.2.png)  
+![Role assignment activity](screenshots/4.3.png)  
+![Custom role creation activity](screenshots/4.4.png)
 
 ---
 
