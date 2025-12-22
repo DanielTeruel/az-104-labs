@@ -37,15 +37,19 @@ To achieve this, a combination of built-in and custom RBAC roles is implemented 
 
 Navigate to **Management Groups** in the Azure Portal (using the central search bar).
 
+![Create Management Group](screenshots/1.1.png)  
+
 Create a new Management Group with the following configuration:
 - **Management Group ID:** `az104-mg1`
 - **Display Name:** `az104-mg1`
 
+![Management Group creation in progress](screenshots/1.2.png)
+
 After creation, wait a few moments until the Management Group appears in the hierarchy.
 
 **Screenshots:**  
-![Create Management Group](screenshots/1.1.png)  
-![Management Group creation in progress](screenshots/1.2.png)  
+
+
 ![Management Group visible in hierarchy](screenshots/1.3.png)
 
 ---
