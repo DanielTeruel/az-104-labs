@@ -15,4 +15,5 @@ A centralized Help Desk team is responsible for managing virtual machines and cr
 - Subscription-level RBAC affects all resource groups
 
 ## Full Documentation
-For step-by-step instructions with screenshots, see [Lab02a Full Documentation](Lab02a_Full_Documentation.md)
+For step-by-step instructions with screenshots, see [Lab02a Full Documentation](Lab02a_Full_Documentation.md)  
+For the Spanish version, see [Lab02a Documentación Completa](Lab02a_Documentacion_Completa.md)
