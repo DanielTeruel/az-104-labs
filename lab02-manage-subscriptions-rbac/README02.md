@@ -72,25 +72,34 @@ Verify the assignment under **Access Control (IAM) → Role assignments**.
 
 From **Access Control (IAM)**, select **Add → Custom role**.
 
+![Custom role creation start](screenshots/3.1.png) 
+
 Configure the role:
 - **Role name:** `Custom Support Request`
 - **Description:** A custom contributor role for support requests
 - **Baseline permissions:** Clone role
 - **Cloned role:** Support Request Contributor
+  
+ ![Select role to clone](screenshots/3.2.png)  
 
 Exclude the permission:
 - **Other: Register Support Resource Provider**
+  
+![Enter role details](screenshots/3.3.png)
 
 This permission is added as a **NotAction**, preventing the Help Desk team from registering new Azure resource providers.
 
+![Exclude permissions step 1](screenshots/3.4.png) 
+
 Confirm that the assignable scope is set to the Management Group `az104-mg1` and review the generated JSON before creating the role.
 
-**Screenshots:**  
-![Custom role creation start](screenshots/3.1.png)  
-![Select role to clone](screenshots/3.2.png)  
-![Enter role details](screenshots/3.3.png)  
-![Exclude permissions step 1](screenshots/3.4.png)  
-![Exclude permissions step 2](screenshots/3.5.png)  
+![Exclude permissions step 2](screenshots/3.5.png) 
+ 
+ 
+
+
+
+ 
 ![Review role JSON](screenshots/3.6.png)  
 ![Custom role created](screenshots/3.7.png)
 
