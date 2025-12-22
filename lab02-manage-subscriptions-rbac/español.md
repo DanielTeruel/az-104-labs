@@ -130,3 +130,7 @@ Grupo de Administración → General → Eliminar
 Alternativamente, el Grupo de Administración también se puede eliminar usando Azure PowerShell.
 ```powershell
 Remove-AzManagementGroup -GroupName az104-mg1
+```
+Una vez finalizada la limpieza, navegué al panel Grupos de administración para verificar que el grupo se había eliminado correctamente.
+
+![Custom role creation activity](screenshots/4.4.png)
