@@ -113,7 +113,6 @@ Navegué al **Registro de Actividad** del Grupo de Administración `az104-mg1` p
 - Otros cambios administrativos realizados durante el laboratorio
 
 ![Activity Log overview](screenshots/4.1.png)  
-![Filter activity log](screenshots/4.2.png)  
 
 ---
 
