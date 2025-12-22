@@ -124,7 +124,10 @@ To avoid unnecessary costs and configuration leftovers, I deleted the Management
 ### Azure Portal
 Management Group → Overview → Delete
 
+![Filter activity log](screenshots/4.2.png)  
+
 ### Azure PowerShell
+Alternatively, the Management Group can also be deleted using Azure PowerShell.
 ```powershell
 Remove-AzManagementGroup -GroupName az104-mg1
 ```
