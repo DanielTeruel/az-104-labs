@@ -37,7 +37,7 @@ Estas acciones están alineadas con el **Microsoft Well-Architected Framework** 
 Lo primero que hice fue crear el grupo de recursos donde se ejecutaría todo el laboratorio.
 
 - **Nombre del grupo de recursos:** `az104-rg2`
-- **Región:** East US
+- **Región:** Spain Central
 
 ![Create resource group](screenshots/1.1.png)
 
