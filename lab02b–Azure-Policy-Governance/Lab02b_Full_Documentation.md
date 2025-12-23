@@ -37,7 +37,7 @@ These actions align with the **Microsoft Well-Architected Framework** and the **
 First, I created the resource group where the entire lab would be executed.
 
 - **Resource group name:** `az104-rg2`
-- **Region:** East US
+- **Region:** Spain Central
 
 ![Create resource group](screenshots/1.1.png)
 
