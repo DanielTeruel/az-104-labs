@@ -19,4 +19,4 @@ To address this, governance controls were implemented to enforce and remediate r
 
 ## Full Documentation
 For step-by-step instructions with screenshots, see [Lab02b Full Documentation](Lab02b_Full_Documentation.md)  
-For the Spanish version, see [Lab02b Documentación Completa](Lab02b_Documentacion_Completa.md)
+For the Spanish version, see [Lab02b Documentación Completa](Lab02b_Documentacion_completa.md)
