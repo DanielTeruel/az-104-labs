@@ -1,4 +1,4 @@
-# Lab 02 – Manage Subscriptions and RBAC (AZ-104)
+# Lab 02a – Manage Subscriptions and RBAC (AZ-104)
 
 Notes and scripts for Lab 02 of AZ-104.
 
