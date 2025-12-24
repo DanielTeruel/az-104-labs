@@ -133,6 +133,8 @@ Después, volví a la configuración de red de la cuenta de almacenamiento, perm
 
 Tras este cambio, al intentar acceder a los recursos de almacenamiento recibí un mensaje de **acceso de red no autorizado**, confirmando que el acceso quedó restringido únicamente a la red virtual.
 
+![Restrict network access to VNet](screenshots/3.10.png)
+
 ---
 
 ## Limpieza
