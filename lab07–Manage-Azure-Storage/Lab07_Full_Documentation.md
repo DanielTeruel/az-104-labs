@@ -133,6 +133,8 @@ I then returned to the storage account network settings, allowed access from the
 
 After this change, attempting to access the storage resources resulted in a **network access denied** message, confirming that access was now restricted to the virtual network only.
 
+![Restrict network access to VNet](screenshots/3.10.png)
+
 ---
 
 ## Cleanup
