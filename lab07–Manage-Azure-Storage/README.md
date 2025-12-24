@@ -21,4 +21,4 @@ At the same time, it is necessary to secure access to data using network restric
 
 ## Full Documentation
 For step-by-step instructions with screenshots, see [Lab07 Full Documentation](Lab07_Full_Documentation.md)  
-For the Spanish version, see [Lab07 Documentación Completa](Lab07_Documentacion_Completa.md)
+For the Spanish version, see [Lab07 Documentación Completa](Lab07_Documentacion_completa.md)
