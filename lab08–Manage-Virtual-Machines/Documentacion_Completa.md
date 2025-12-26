@@ -171,6 +171,9 @@ I verify the registration status:
 ```bash
 az provider show --namespace Microsoft.Insights --query "registrationState"
 ```
+
+---
+
 ## Task 5 – Create a Virtual Machine Using Azure PowerShell
 
 From Cloud Shell (PowerShell), I run:
@@ -209,6 +212,8 @@ The changes are reflected in the Azure portal.
 
 ![Maximum Instances](screenshots/5.4.png)
 
+---
+
 ## Task 6 – Create a Virtual Machine Using Azure CLI
 
 From Cloud Shell (Bash), I run:
@@ -240,6 +245,7 @@ The changes are correctly reflected in the Azure portal.
 
 ![Maximum Instances](screenshots/6.5.png)
 
+---
 
 ## Resource Cleanup
 
