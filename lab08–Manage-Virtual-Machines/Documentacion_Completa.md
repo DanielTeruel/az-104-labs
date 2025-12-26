@@ -193,6 +193,7 @@ New-AzVM `
 -Credential (Get-Credential)
 
 ```
+![Maximum Instances](screenshots/5.2.png)
 
 I stop the virtual machine:
 
@@ -201,9 +202,55 @@ Stop-AzVM -ResourceGroupName 'az104-rg8' -Name 'myPSVM'
 ```
 
 I confirm the Deallocated state.
+![Maximum Instances](screenshots/5.3.png)
+
 
 The changes are reflected in the Azure portal.
 
+![Maximum Instances](screenshots/5.4.png)
+
+## Task 6 – Create a Virtual Machine Using Azure CLI
+
+From Cloud Shell (Bash), I run:
+
+```bash
+az vm create \
+--name myCLIVM \
+--resource-group az104-rg8 \
+--image Ubuntu2204 \
+--admin-username localadmin \
+--generate-ssh-keys
+```
+![Maximum Instances](screenshots/5.1.png)
+
+I check the VM status:
+
+```bash
+az vm show --name myCLIVM --resource-group az104-rg8 --show-details --output table
+```
+![Maximum Instances](screenshots/6.3.png)
+I deallocate the virtual machine:
+
+```bash
+az vm deallocate --resource-group az104-rg8 --name myCLIVM
+```
+![Maximum Instances](screenshots/6.4.png)
+
+The changes are correctly reflected in the Azure portal.
+
+![Maximum Instances](screenshots/6.5.png)
 
 
+## Resource Cleanup
 
+To avoid unnecessary costs, I delete the Resource Group, which removes all associated resources.
+
+Azure Portal
+
+Resource Groups → Delete Resource Group
+
+Azure PowerShell
+
+```powershell
+Remove-AzResourceGroup -Name az104-rg8
+```
