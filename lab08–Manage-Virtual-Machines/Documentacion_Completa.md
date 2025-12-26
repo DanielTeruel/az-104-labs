@@ -226,7 +226,7 @@ az vm create \
 --admin-username localadmin \
 --generate-ssh-keys
 ```
-![Maximum Instances](screenshots/5.1.png)
+![Maximum Instances](screenshots/6.1.png)
 
 I check the VM status:
 
