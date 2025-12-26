@@ -165,3 +165,45 @@ To resolve this, I run the following Azure CLI commands:
 
 ```bash
 az provider register --namespace Microsoft.Insights
+```
+
+I verify the registration status:
+```bash
+az provider show --namespace Microsoft.Insights --query "registrationState"
+```
+## Task 5 – Create a Virtual Machine Using Azure PowerShell
+
+From Cloud Shell (PowerShell), I run:
+
+Get-AzVM
+```powershell
+Get-AzVM
+```
+
+I create a new virtual machine:
+
+```powershell
+New-AzVM `
+-ResourceGroupName 'az104-rg8' `
+-Name 'myPSVM' `
+-Location 'East US' `
+-Image 'Win2019Datacenter' `
+-Zone '1' `
+-Size 'Standard_D2s_v3' `
+-Credential (Get-Credential)
+
+```
+
+I stop the virtual machine:
+
+```powershell
+Stop-AzVM -ResourceGroupName 'az104-rg8' -Name 'myPSVM'
+```
+
+I confirm the Deallocated state.
+
+The changes are reflected in the Azure portal.
+
+
+
+
