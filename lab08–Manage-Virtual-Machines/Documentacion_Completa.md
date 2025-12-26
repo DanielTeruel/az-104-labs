@@ -196,6 +196,7 @@ New-AzVM `
 -Credential (Get-Credential)
 
 ```
+
 ![Maximum Instances](screenshots/5.2.png)
 
 I stop the virtual machine:
@@ -205,6 +206,7 @@ Stop-AzVM -ResourceGroupName 'az104-rg8' -Name 'myPSVM'
 ```
 
 I confirm the Deallocated state.
+
 ![Maximum Instances](screenshots/5.3.png)
 
 
@@ -226,6 +228,7 @@ az vm create \
 --admin-username localadmin \
 --generate-ssh-keys
 ```
+
 ![Maximum Instances](screenshots/6.1.png)
 
 I check the VM status:
@@ -233,12 +236,15 @@ I check the VM status:
 ```bash
 az vm show --name myCLIVM --resource-group az104-rg8 --show-details --output table
 ```
+
 ![Maximum Instances](screenshots/6.3.png)
+
 I deallocate the virtual machine:
 
 ```bash
 az vm deallocate --resource-group az104-rg8 --name myCLIVM
 ```
+
 ![Maximum Instances](screenshots/6.4.png)
 
 The changes are correctly reflected in the Azure portal.
