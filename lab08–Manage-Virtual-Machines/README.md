@@ -1,39 +1,26 @@
-# Lab 08 – Gestionar Máquinas Virtuales (AZ-104)
+# Lab 08 – Manage Virtual Machines (AZ-104)
 
-Bienvenido al **Lab 08 de AZ-104: Gestión de Máquinas Virtuales en Azure**.  
-Este repositorio contiene la documentación completa del laboratorio en **español** e **inglés**, incluyendo pasos para desplegar máquinas virtuales, configurar conjuntos de escalado, escalar recursos y crear VMs mediante **Portal de Azure, PowerShell y Azure CLI**.
+Notes and documentation for Lab 08 of AZ-104.
 
----
+## Overview
+In this lab, I worked with **Azure Virtual Machines** to create, configure, and manage standalone VMs and **Virtual Machine Scale Sets (VMSS)**.  
+The lab covers deploying VMs across **Availability Zones**, scaling compute and storage resources, configuring auto-scaling rules, and creating VMs using **Azure Portal, PowerShell, and Azure CLI**.
 
-## Documentación
+The objective was to explore how Azure Virtual Machines can be deployed, scaled, and automated in a real-world scenario while ensuring high availability and efficiency.
 
-### Español 🇪🇸
-La documentación en español detalla todo el laboratorio paso a paso, incluyendo:
+## Business Scenario
+The organization wants to evaluate different strategies to deploy virtual machines in Azure.  
+First, individual virtual machines are deployed across **Availability Zones** to achieve high availability with a 99.99% SLA.  
+Then, a **Virtual Machine Scale Set** is created to automatically scale resources based on CPU usage metrics, optimizing performance and cost.
 
-- Creación de máquinas virtuales en Zonas de Disponibilidad  
-- Escalado vertical de recursos y discos  
-- Creación y configuración de Conjuntos de Escalado de Máquinas Virtuales (VMSS)  
-- Configuración de reglas de autoescalado  
-- Creación de VMs con PowerShell y Azure CLI  
-- Limpieza de recursos al finalizar el laboratorio  
+## What I Learned
+- How to create virtual machines across Availability Zones for high availability  
+- How to resize VMs and add data disks for vertical scaling  
+- How to configure and manage Virtual Machine Scale Sets (VMSS)  
+- How to create autoscaling rules based on CPU metrics  
+- How to deploy VMs using **PowerShell** and **Azure CLI**  
+- How to monitor VM status and deallocate resources to reduce costs
 
-📄 [Ver documentación completa en español](docs/Lab08_ES.md)
-
----
-
-### Inglés 🇺🇸
-La documentación en inglés describe los mismos pasos y conceptos, incluyendo:
-
-- Deploying virtual machines across Availability Zones  
-- Scaling compute and storage resources  
-- Creating and configuring Virtual Machine Scale Sets (VMSS)  
-- Configuring autoscaling rules  
-- Creating VMs using PowerShell and Azure CLI  
-- Cleaning up resources after the lab  
-
-📄 [View full documentation in English](docs/Lab08_EN.md)
-
----
-
-## Estructura del repositorio
-
+## Full Documentation
+For step-by-step instructions with screenshots in **English**, see [Lab08 Full Documentation (EN)](docs/Lab08_EN.md)  
+For the **Spanish version**, see [Lab08 Documentación Completa (ES)](docs/Lab08_ES.md)
