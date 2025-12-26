@@ -22,5 +22,5 @@ Then, a **Virtual Machine Scale Set** is created to automatically scale resource
 - How to monitor VM status and deallocate resources to reduce costs
 
 ## Full Documentation
-For step-by-step instructions with screenshots in **English**, see [Lab08 Full Documentation](Lab08_Full_Documentation.md)
+For step-by-step instructions with screenshots in **English**, see [Lab08 Full Documentation](Lab08_Full_Documentation.md)    
 For the **Spanish version**, see [Lab08 Documentación Completa](Lab08_Documentacion_completa.md)
