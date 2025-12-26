@@ -245,8 +245,6 @@ I deallocate the virtual machine:
 az vm deallocate --resource-group az104-rg8 --name myCLIVM
 ```
 
-![Maximum Instances](screenshots/6.4.png)
-
 The changes are correctly reflected in the Azure portal.
 
 ![Maximum Instances](screenshots/6.5.png)
