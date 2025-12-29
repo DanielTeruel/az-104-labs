@@ -118,15 +118,6 @@ I deployed the template using PowerShell:
 
 I verified that the deployment was successful.
 
-
-I confirmed the disk creation with:
-
-```powershell
-Get-AzDisk | ft
-```
-
-I confirmed the disk creation with:
-
 ![3.8](screenshots/3.8.png)
 
 I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
