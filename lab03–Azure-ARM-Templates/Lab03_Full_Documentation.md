@@ -178,7 +178,6 @@ az disk list --resource-group az104-rg3 --output table
 
 ## Cleanup
 
-![5.6](screenshots/5.6.png)
 To avoid unnecessary costs, I deleted the resource group, which removed all associated resources:
 
 # Azure PowerShell
