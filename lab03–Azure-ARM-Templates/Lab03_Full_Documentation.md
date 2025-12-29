@@ -29,7 +29,7 @@ I wanted to explore how to automate and simplify Azure resource deployments. Usi
 
 ## Lab Tasks
 
-### Task 1 – Create a managed disk and export an ARM template
+## Task 1 – Create a managed disk and export an ARM template
 I started by creating the resource group for the lab.  
 
 ![1.1](screenshots/1.1.png)
@@ -52,7 +52,7 @@ I extracted the ZIP and found `template.json` and `parameters.json` to use in th
 
 ---
 
-### Task 2 – Deploy a new managed disk using a custom template
+## Task 2 – Deploy a new managed disk using a custom template
 I opened **Deploy a custom template** in the Azure portal and uploaded the downloaded template.  
 
 ![2.1](screenshots/2.1.png)
@@ -83,7 +83,7 @@ I checked the deployment details under **Resource Group → Deployments**.
 
 ---
 
-### Task 3 – Deploy a template using Azure Cloud Shell and PowerShell
+## Task 3 – Deploy a template using Azure Cloud Shell and PowerShell
 Before opening PowerShell, I created a new storage account in Cloud Shell to store the template files I would need later.  
 
 ![3.1](screenshots/3.1.png)
@@ -126,7 +126,7 @@ Then, I switched to Bash in Cloud Shell, edited `template.json` and `parameters.
 
 ---
 
-### Task 4 – Deploy the template using Azure CLI (Bash)
+## Task 4 – Deploy the template using Azure CLI (Bash)
 
 I deployed the template using:
 
@@ -150,7 +150,7 @@ az disk list --resource-group az104-rg3 --output table
 
 ---
 
-### Task 5 – Deploy a managed disk using Bicep
+## Task 5 – Deploy a managed disk using Bicep
 
 I uploaded `azuredeploydisk.bicep` to Cloud Shell and edited the parameters:
 
