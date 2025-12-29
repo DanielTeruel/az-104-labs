@@ -124,23 +124,25 @@ I verified that the deployment was successful.
 
 ## Task 4 – Deploy the template using Azure CLI (Bash)
 
-![4.1](screenshots/4.1.png)
 I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
 
+![4.1](screenshots/4.1.png)
 
-![4.2](screenshots/4.2.png)
 I deployed the updated template using:
 
 ```bash
 az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
 ````
 
-![4.3](screenshots/4.3.png)
+![4.2](screenshots/4.2.png)
+
 I listed the disks to verify the deployment:
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
+
+![4.3](screenshots/4.3.png)
 
 ![4.4](screenshots/4.4.png)
 
@@ -148,26 +150,29 @@ az disk list --resource-group az104-rg3 --output table
 
 ### Task 5 – Deploy a managed disk using Bicep
 
-![5.1](screenshots/5.1.png)
 I uploaded `azuredeploydisk.bicep` to Cloud Shell, edited the parameters:
 
 * `managedDiskName` → `"az104-disk5"` (line 2)
 * `diskSizeInGiB` → `32` (line 7)
 * `sku name` → `StandardSSD_LRS` (line 26)
 
-![5.2](screenshots/5.2.png)
+![5.1](screenshots/5.1.png)
+
 I deployed the Bicep template:
 
 ```bash
 az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
 ```
 
-![5.3](screenshots/5.3.png)
+![5.2](screenshots/5.2.png)
+
 I listed the disks to confirm everything was correct:
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
+
+![5.3](screenshots/5.3.png)
 
 ![5.4](screenshots/5.4.png)
 
@@ -190,12 +195,5 @@ Remove-AzResourceGroup -Name az104-rg3
 
 ```bash
 az group delete --name az104-rg3
-```
-
-```
-
-Si quieres, puedo **revisar todo el README completo** y aplicar este mismo patrón **de adelantar la imagen un paso en cada sección**, así tendrás todo listo para copiar y pegar en GitHub con consistencia visual total.  
-
-¿Quieres que haga eso ahora?
 ```
 
