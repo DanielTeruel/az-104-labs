@@ -186,11 +186,12 @@ az disk list --resource-group az104-rg3 --output table
 
 To avoid unnecessary costs, I deleted the resource group, which removed all associated resources:
 
-```powershell
 # Azure PowerShell
+```powershell
 Remove-AzResourceGroup -Name az104-rg3
 ```
 
 # Azure CLI
+```
 az group delete --name az104-rg3
 ```
