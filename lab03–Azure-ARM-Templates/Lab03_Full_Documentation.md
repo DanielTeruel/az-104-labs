@@ -128,21 +128,23 @@ Then, I switched to Bash in Cloud Shell, edited `template.json` and `parameters.
 
 ## Task 4 – Deploy the template using Azure CLI (Bash)
 
+
+
+![4.1](screenshots/4.1.png)
+
 I deployed the template using:
 
 ```bash
 az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
 ```
 
-![4.1](screenshots/4.1.png)
+![4.2](screenshots/4.2.png)
 
 I listed the disks to verify the deployment:
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
-
-![4.2](screenshots/4.2.png)
 
 ![4.3](screenshots/4.3.png)
 
