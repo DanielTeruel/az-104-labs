@@ -166,13 +166,13 @@ az deployment group create --resource-group az104-rg3 --template-file azuredeplo
 
 ![5.2](screenshots/5.2.png)
 
+![5.3](screenshots/5.3.png)
+
 I listed the disks to confirm everything was correct:
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
-
-![5.3](screenshots/5.3.png)
 
 ![5.4](screenshots/5.4.png)
 
