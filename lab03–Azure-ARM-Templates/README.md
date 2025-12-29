@@ -1,8 +1,5 @@
 # Lab 03 – Manage Azure Resources by using Azure Resource Manager Templates (AZ-104)
 
-## Introduction
-In this lab, we learned how to automate Azure resource deployments using Azure Resource Manager (ARM) templates and Bicep templates. We explored different ways to deploy templates through the Azure portal, Cloud Shell with PowerShell, and the Azure CLI.
-
 ## Overview
 The lab focused on deploying managed disks in Azure and covered:
 - Creating and exporting ARM templates
