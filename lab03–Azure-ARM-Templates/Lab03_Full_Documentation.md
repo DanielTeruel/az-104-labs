@@ -50,31 +50,34 @@ A ZIP file was downloaded containing `template.json` and `parameters.json` for t
 
 ![1.5](screenshots/1.5.png)
 
-I then went to **Deploy a custom template** in the Azure portal and uploaded the previously downloaded template to the editor.  
 
 ---
 
 ## Task 2 – Deploy a new managed disk using a custom template
 
-I uploaded the template file to Azure, and edited the default value of the parameter `disk_name` to `"az104-disk2"` and set the parameter name to `"disk_name"`.  
+I then went to **Deploy a custom template** in the Azure portal and uploaded the previously downloaded template to the editor.  
 
 ![2.1](screenshots/2.1.png)
 
-I also edited `parameters.json` to match the template parameter name (`disk_name`).  
+I uploaded the template file to Azure, and edited the default value of the parameter `disk_name` to `"az104-disk2"` and set the parameter name to `"disk_name"`.  
+
 
 ![2.2](screenshots/2.2.png)
 
-I deployed the resource.  
+I also edited `parameters.json` to match the template parameter name (`disk_name`).  
+
 
 ![2.3](screenshots/2.3.png)
 
-I verified that the deployment was successful and that the new disk appeared in the Azure portal.  
+I deployed the resource.  
 
 ![2.4](screenshots/2.4.png)
 
-I checked the deployment details under **Resource Group → Deployments** to review the updated ARM template and parameters.  
+I verified that the deployment was successful and that the new disk appeared in the Azure portal.  
 
 ![2.5](screenshots/2.5.png)
+
+I checked the deployment details under **Resource Group → Deployments** to review the updated ARM template and parameters.  
 
 ![2.6](screenshots/2.6.png)
 
