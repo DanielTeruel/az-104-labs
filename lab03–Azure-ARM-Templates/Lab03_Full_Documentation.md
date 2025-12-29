@@ -122,14 +122,11 @@ I verified that the deployment was successful.
 
 ![3.9](screenshots/3.9.png)
 
-### Task 4 – Deploy the template using Azure CLI (Bash)
+## Task 4 – Deploy the template using Azure CLI (Bash)
 
 ![4.1](screenshots/4.1.png)
 I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
 
----
-
-### Task 4 – Deploy the template using Azure CLI (Bash)
 
 ![4.2](screenshots/4.2.png)
 I deployed the updated template using:
