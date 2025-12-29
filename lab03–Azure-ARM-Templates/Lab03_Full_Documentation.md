@@ -1,3 +1,8 @@
+Perfecto 😎, voy a tomar **tus comentarios numerados con las capturas** y toda la información del Lab 03 que me diste y crear **un README.md completo, listo para copiar en GitHub**, con la estructura profesional que usamos antes, incluyendo **Overview, Business Scenario, What I Learned**, y las tareas numeradas con sus capturas de `screenshots/`.
+
+Aquí tienes todo en un solo bloque:
+
+````markdown
 # Lab 03 – Manage Azure Resources by using Azure Resource Manager Templates (AZ-104)
 
 ## Introduction
@@ -70,4 +75,108 @@ Your team wants to automate and simplify Azure resource deployments. By using te
 
 ---
 
-### Task 3 – Deploy a template
+### Task 3 – Deploy a template using Azure Cloud Shell and PowerShell
+1. **Set up Cloud Shell storage** – create a new storage account before accessing PowerShell.  
+   ![3.1](screenshots/3.1.png)
+
+2. **Upload template files** – in PowerShell Cloud Shell, switch to Classic view and upload `template.json` and `parameters.json`.  
+   ![3.2](screenshots/3.2.png)
+
+3. **Edit template** – update the default value of `disk_name` in lines 5–6.  
+   ![3.3](screenshots/3.3.png)
+
+4. **Edit parameters file** – update line 5 to match the template.  
+   ![3.5](screenshots/3.5.png)
+
+5. **Deploy template** using:
+   ```powershell
+   New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
+````
+
+![3.6](screenshots/3.6.png)
+
+6. **Verify disk creation**:
+
+   ```powershell
+   Get-AzDisk | ft
+   ```
+
+   ![3.7](screenshots/3.7.png)
+
+7. **Switch to Bash** in Cloud Shell and edit `template.json` and `parameters.json`, changing the disk name to `"disk4"`.
+   ![3.8](screenshots/3.8.png)
+   ![3.9](screenshots/3.9.png)
+
+---
+
+### Task 4 – Deploy the template using Azure CLI (Bash)
+
+1. Deploy the template:
+
+   ```bash
+   az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
+   ```
+
+   ![4.1](screenshots/4.1.png)
+
+2. Verify the deployment:
+
+   ```bash
+   az disk list --resource-group az104-rg3 --output table
+   ```
+
+   ![4.2](screenshots/4.2.png)
+   ![4.3](screenshots/4.3.png)
+   ![4.4](screenshots/4.4.png)
+
+---
+
+### Task 5 – Deploy a managed disk using Bicep
+
+1. Upload `azuredeploydisk.bicep` to Cloud Shell and edit:
+
+   * `managedDiskName` → `"az104-disk5"` (line 2)
+   * `diskSizeInGiB` → `32` (line 7)
+   * `sku name` → `StandardSSD_LRS` (line 26)
+     ![5.1](screenshots/5.1.png)
+
+2. Deploy the Bicep template:
+
+   ```bash
+   az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
+   ```
+
+   ![5.2](screenshots/5.2.png)
+
+3. Verify the disk creation:
+
+   ```bash
+   az disk list --resource-group az104-rg3 --output table
+   ```
+
+   ![5.3](screenshots/5.3.png)
+   ![5.4](screenshots/5.4.png)
+   ![5.5](screenshots/5.5.png)
+
+---
+
+## Cleanup
+
+Delete the resource group to remove all lab resources and avoid unnecessary costs:
+
+```powershell
+# Azure PowerShell
+Remove-AzResourceGroup -Name az104-rg3
+
+# Azure CLI
+az group delete --name az104-rg3
+```
+
+```
+
+---
+
+Si quieres, puedo hacer **la versión en español del README**, exactamente igual, para que tengas **README bilingüe listo para GitHub**, siguiendo la misma numeración de capturas.  
+
+¿Quieres que haga esa versión ahora?
+```
