@@ -148,7 +148,7 @@ az disk list --resource-group az104-rg3 --output table
 
 ---
 
-### Task 5 – Deploy a managed disk using Bicep
+## Task 5 – Deploy a managed disk using Bicep
 
 I uploaded `azuredeploydisk.bicep` to Cloud Shell, edited the parameters:
 
@@ -168,12 +168,11 @@ az deployment group create --resource-group az104-rg3 --template-file azuredeplo
 
 I listed the disks to confirm everything was correct:
 
-![5.4](screenshots/5.4.png)
-
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
 
+![5.4](screenshots/5.4.png)
 
 ![5.5](screenshots/5.5.png)
 
