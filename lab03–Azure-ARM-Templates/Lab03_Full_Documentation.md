@@ -106,13 +106,11 @@ I edited `parameters.json` line 5 to match the template changes.
 
 ![3.6](screenshots/3.6.png)
 
+I deployed the template using PowerShell:
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
 ````
-
-I deployed the template using PowerShell:
-
 
 ![3.7](screenshots/3.7.png)
 
