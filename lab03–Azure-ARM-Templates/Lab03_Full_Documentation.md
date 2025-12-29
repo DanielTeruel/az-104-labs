@@ -1,8 +1,3 @@
-Perfecto 😎, voy a tomar **tus comentarios numerados con las capturas** y toda la información del Lab 03 que me diste y crear **un README.md completo, listo para copiar en GitHub**, con la estructura profesional que usamos antes, incluyendo **Overview, Business Scenario, What I Learned**, y las tareas numeradas con sus capturas de `screenshots/`.
-
-Aquí tienes todo en un solo bloque:
-
-````markdown
 # Lab 03 – Manage Azure Resources by using Azure Resource Manager Templates (AZ-104)
 
 ## Introduction
