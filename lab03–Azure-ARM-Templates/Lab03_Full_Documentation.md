@@ -26,8 +26,6 @@ I wanted to explore how to automate and simplify Azure resource deployments. Usi
 
 ---
 
-## Lab Steps
-
 ## Task 1 – Create a managed disk and export an ARM template
 
 I started by creating the resource group for the lab.  
