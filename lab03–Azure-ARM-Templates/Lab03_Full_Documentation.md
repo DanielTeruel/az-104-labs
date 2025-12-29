@@ -13,13 +13,18 @@ This exercise gave me hands-on experience with infrastructure-as-code (IaC) prac
 ## Business Scenario
 I wanted to explore how to automate and simplify Azure resource deployments. Using templates helped me reduce administrative overhead, minimize human error, and maintain consistency across deployments.
 
-## What I Learned
-- How to create and configure managed disks in the Azure portal
-- How to export ARM templates from existing resources
-- How to edit templates and redeploy resources
-- How to deploy templates using Cloud Shell (PowerShell and Bash)
-- How to deploy resources using Bicep templates
-- How to verify deployments and clean up resources
+## Lab Objectives
+
+By completing this lab, I aimed to:
+
+- Understand how to create and manage Azure managed disks.
+- Learn to export ARM templates from existing resources.
+- Practice editing ARM templates and redeploying resources.
+- Deploy resources using Azure Cloud Shell with PowerShell.
+- Deploy resources using Azure CLI (Bash) in Cloud Shell.
+- Deploy resources using Azure Bicep templates.
+- Verify that deployments were successful and validate resource configurations.
+- Gain hands-on experience with infrastructure-as-code (IaC) practices.
 
 ---
 
