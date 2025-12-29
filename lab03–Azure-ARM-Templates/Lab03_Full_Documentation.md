@@ -15,8 +15,6 @@ I wanted to explore how to automate and simplify Azure resource deployments. Usi
 
 ## Lab Objectives
 
-By completing this lab, I aimed to:
-
 - Understand how to create and manage Azure managed disks.
 - Learn to export ARM templates from existing resources.
 - Practice editing ARM templates and redeploying resources.
