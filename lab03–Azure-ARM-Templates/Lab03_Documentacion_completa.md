@@ -188,5 +188,3 @@ Remove-AzResourceGroup -Name az104-rg3
 az group delete --name az104-rg3
 ```
 
-```
-```
