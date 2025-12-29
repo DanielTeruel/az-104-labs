@@ -91,29 +91,27 @@ Before opening PowerShell, I created a new storage account in Cloud Shell to sto
 
 ![3.1](screenshots/3.1.png)
 
-Once the storage account was ready, I opened PowerShell in Cloud Shell, switched to Classic view, and uploaded `template.json` and `parameters.json`. I confirmed the files were visible in the file explorer.  
-
 ![3.2](screenshots/3.2.png)
 
-I edited the template to update the default value of the parameter `disk_name` (lines 5–6).  
+Once the storage account was ready, I opened PowerShell in Cloud Shell, switched to Classic view, and uploaded `template.json` and `parameters.json`. I confirmed the files were visible in the file explorer.  
 
 ![3.3](screenshots/3.3.png)
 
-I edited `parameters.json` line 5 to match the template changes.  
+I edited the template to update the default value of the parameter `disk_name` (lines 5–6).  
 
 ![3.5](screenshots/3.5.png)
 
-I deployed the template using PowerShell:
+I edited `parameters.json` line 5 to match the template changes.  
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
 ````
 
-I verified that the deployment was successful.
+I deployed the template using PowerShell:
 
 ![3.6](screenshots/3.6.png)
 
-I confirmed the disk creation with:
+I verified that the deployment was successful.
 
 ```powershell
 Get-AzDisk | ft
@@ -121,9 +119,11 @@ Get-AzDisk | ft
 
 ![3.7](screenshots/3.7.png)
 
-I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
+I confirmed the disk creation with:
 
 ![3.8](screenshots/3.8.png)
+
+I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
 
 ![3.9](screenshots/3.9.png)
 
