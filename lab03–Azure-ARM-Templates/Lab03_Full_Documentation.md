@@ -156,7 +156,9 @@ I uploaded `azuredeploydisk.bicep` to Cloud Shell, edited the parameters:
 * `diskSizeInGiB` → `32` (line 7)
 * `sku name` → `StandardSSD_LRS` (line 26)
 
-![5.1](screenshots/5.1.png)
+![5.2](screenshots/5.2.png)
+
+![5.3](screenshots/5.3.png)
 
 I deployed the Bicep template:
 
@@ -164,9 +166,7 @@ I deployed the Bicep template:
 az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
 ```
 
-![5.2](screenshots/5.2.png)
-
-![5.3](screenshots/5.3.png)
+![5.4](screenshots/5.4.png)
 
 I listed the disks to confirm everything was correct:
 
@@ -174,7 +174,6 @@ I listed the disks to confirm everything was correct:
 az disk list --resource-group az104-rg3 --output table
 ```
 
-![5.4](screenshots/5.4.png)
 
 ![5.5](screenshots/5.5.png)
 
