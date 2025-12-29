@@ -24,5 +24,5 @@ The organization aims to simplify and standardize resource deployments in Azure.
 - How to clean up resources to reduce costs
 
 ## Full Documentation
-For step-by-step instructions with screenshots, see [Lab02b Full Documentation](Lab02b_Full_Documentation.md)  
-For the Spanish version, see [Lab02b Documentación Completa](Lab02b_Documentacion_completa.md)
+For step-by-step instructions with screenshots, see [Lab03 Full Documentation](Lab03_Full_Documentation.md)  
+For the Spanish version, see [Lab03 Documentación Completa](Lab03_Documentacion_completa.md)
