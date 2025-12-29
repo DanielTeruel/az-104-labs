@@ -22,3 +22,7 @@ The organization aims to simplify and standardize resource deployments in Azure.
 - How to deploy a managed disk using a Bicep template
 - How to verify deployments and resource configurations
 - How to clean up resources to reduce costs
+
+## Full Documentation
+For step-by-step instructions with screenshots, see [Lab02b Full Documentation](Lab02b_Full_Documentation.md)  
+For the Spanish version, see [Lab02b Documentación Completa](Lab02b_Documentacion_completa.md)
