@@ -158,17 +158,17 @@ I uploaded `azuredeploydisk.bicep` to Cloud Shell, edited the parameters:
 
 ![5.2](screenshots/5.2.png)
 
-![5.3](screenshots/5.3.png)
-
 I deployed the Bicep template:
 
 ```bash
 az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
 ```
 
-![5.4](screenshots/5.4.png)
+![5.3](screenshots/5.3.png)
 
 I listed the disks to confirm everything was correct:
+
+![5.4](screenshots/5.4.png)
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
