@@ -120,61 +120,57 @@ I verified that the deployment was successful.
 
 ![3.8](screenshots/3.8.png)
 
-I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
-
 ![3.9](screenshots/3.9.png)
+
+### Task 4 – Deploy the template using Azure CLI (Bash)
+
+![4.1](screenshots/4.1.png)
+I then switched to Bash in Cloud Shell, navigated to the file explorer of the storage account, and edited `template.json` and `parameters.json` lines 5–6 to name the disk `"disk4"`.
 
 ---
 
 ### Task 4 – Deploy the template using Azure CLI (Bash)
 
+![4.2](screenshots/4.2.png)
 I deployed the updated template using:
 
 ```bash
 az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
-```
+````
 
-![4.1](screenshots/4.1.png)
-
+![4.3](screenshots/4.3.png)
 I listed the disks to verify the deployment:
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
 
-![4.2](screenshots/4.2.png)
-
-![4.3](screenshots/4.3.png)
-
 ![4.4](screenshots/4.4.png)
 
 ---
 
-## Task 5 – Deploy a managed disk using Bicep
+### Task 5 – Deploy a managed disk using Bicep
 
+![5.1](screenshots/5.1.png)
 I uploaded `azuredeploydisk.bicep` to Cloud Shell, edited the parameters:
 
 * `managedDiskName` → `"az104-disk5"` (line 2)
 * `diskSizeInGiB` → `32` (line 7)
 * `sku name` → `StandardSSD_LRS` (line 26)
 
-![5.1](screenshots/5.1.png)
-
+![5.2](screenshots/5.2.png)
 I deployed the Bicep template:
 
 ```bash
 az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
 ```
 
-![5.2](screenshots/5.2.png)
-
+![5.3](screenshots/5.3.png)
 I listed the disks to confirm everything was correct:
 
 ```bash
 az disk list --resource-group az104-rg3 --output table
 ```
-
-![5.3](screenshots/5.3.png)
 
 ![5.4](screenshots/5.4.png)
 
@@ -184,6 +180,7 @@ az disk list --resource-group az104-rg3 --output table
 
 ## Cleanup
 
+![5.6](screenshots/5.6.png)
 To avoid unnecessary costs, I deleted the resource group, which removed all associated resources:
 
 # Azure PowerShell
@@ -191,9 +188,17 @@ To avoid unnecessary costs, I deleted the resource group, which removed all asso
 ```powershell
 Remove-AzResourceGroup -Name az104-rg3
 ```
+
 # Azure CLI
 
-```
+```bash
 az group delete --name az104-rg3
+```
+
+```
+
+Si quieres, puedo **revisar todo el README completo** y aplicar este mismo patrón **de adelantar la imagen un paso en cada sección**, así tendrás todo listo para copiar y pegar en GitHub con consistencia visual total.  
+
+¿Quieres que haga eso ahora?
 ```
 
