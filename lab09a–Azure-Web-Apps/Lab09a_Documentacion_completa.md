@@ -166,3 +166,21 @@ También revisé las métricas del **lado del servidor**, validando el comportam
 ![Resumen de métricas y autoscaling](screenshots/5.8.png)
 
 Estas métricas confirmaron que el **escalado automático** funcionaba correctamente ante un aumento de demanda.
+
+## Limpieza de Recursos
+
+Para evitar costes innecesarios, eliminé el **Grupo de Recursos**, lo que eliminó todos los recursos asociados al laboratorio.
+
+### Azure Portal
+
+- Navegar a **Grupos de recursos** → Seleccionar el grupo de recursos del laboratorio → Hacer clic en **Eliminar grupo de recursos**  
+- Confirmar la eliminación
+
+![Eliminación del Grupo de Recursos](screenshots/5.9.png)
+
+### Azure PowerShell
+
+```powershell
+Remove-AzResourceGroup -Name az104-rg9
+
+
