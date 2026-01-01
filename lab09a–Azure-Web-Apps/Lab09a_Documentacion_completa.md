@@ -28,9 +28,9 @@ Se requiere un entorno en la nube flexible que permita probar actualizaciones en
 
 Para iniciar el laboratorio, creé un **grupo de recursos** donde alojar todos los servicios necesarios.
 
-### Creación del App Service
-
 ![Creación del grupo de recursos](screenshots/1.1.png)
+
+### Creación del App Service
 
 Desde la página principal del portal de Azure busqué **App Services** y procedí a crear uno nuevo.  
 Configuré el App Service con los siguientes parámetros:
@@ -102,12 +102,12 @@ Guardé los cambios para iniciar el despliegue automático.
 
 ![Verificación de Hello World en staging](screenshots/3.2.png)
 
-Una vez completado el despliegue, seleccioné el **enlace predeterminado del slot de staging**.  
-La página mostraba correctamente el mensaje **Hello World**, confirmando que el código se había desplegado con éxito.
-
 ---
 
 ## 4. Intercambio entre slots (Swap)
+
+Una vez completado el despliegue, seleccioné el **enlace predeterminado del slot de staging**.  
+La página mostraba correctamente el mensaje **Hello World**, confirmando que el código se había desplegado con éxito.
 
 ![Swap entre staging y producción](screenshots/3.3.png)
 
