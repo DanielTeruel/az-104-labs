@@ -1,30 +1,32 @@
-# Lab 09a – Implementación de Web Apps (AZ-104)
-Notas y documentación para el Lab 09a de AZ-104.
+# Lab 09a – Implement Web Apps (AZ-104)
+
+Notes and documentation for Lab 09a of AZ-104.
 
 ## Overview
-En este laboratorio trabajé con **Azure Web Apps** para crear, configurar y gestionar aplicaciones web, incluyendo **deployment slots**, despliegue desde **GitHub** y configuración de **escalado automático**.  
-El laboratorio abarca la creación de un App Service, configuración de slots de staging y producción, intercambio de slots, despliegue continuo desde un repositorio externo y pruebas de carga con **Azure Load Testing**.
+In this lab, I worked with **Azure Web Apps** to create, configure, and manage web applications using **deployment slots**.  
+The lab covers creating an **App Service**, configuring staging and production slots, deploying code automatically from a **GitHub repository**, swapping slots, and testing **autoscaling** using **Azure Load Testing**.
 
-El objetivo fue explorar cómo las Web Apps en Azure pueden ser desplegadas, probadas y escaladas automáticamente en un escenario real, asegurando disponibilidad y eficiencia.
+The objective was to explore how Azure Web Apps can be deployed, tested, and automatically scaled in a real-world scenario while ensuring high availability and efficient performance.
 
 ## Business Scenario
-La organización desea migrar sus sitios web desde un **centro de datos local (on-premises)** a Azure para reducir costes de hardware y mejorar la escalabilidad.  
-Los sitios están actualmente en servidores Windows con PHP y el hardware está próximo a su fin de vida útil.  
+The organization wants to migrate its websites from an **on-premises datacenter** to Azure to reduce hardware costs and improve scalability.  
+The websites are currently running on Windows servers with PHP, and the hardware is nearing end-of-life.
 
-Se creó un entorno que permite:
+A solution was implemented that allows:
 
-- Probar actualizaciones en un **slot de staging** antes de moverlas a producción.  
-- Desplegar código automáticamente desde un **repositorio GitHub externo**.  
-- Escalar automáticamente el App Service según la demanda mediante **autoscaling** y pruebas de carga.
+- Testing updates in a **staging slot** before moving them to production  
+- Deploying code automatically from a **GitHub repository**  
+- Automatically scaling the App Service based on demand using **autoscaling** and load testing
 
 ## What I Learned
-- Cómo crear y configurar un **App Service** en Azure para aplicaciones web PHP.  
-- Cómo crear y gestionar **deployment slots** para staging y producción.  
-- Cómo configurar **despliegue automático** desde un repositorio externo (GitHub).  
-- Cómo realizar un **swap** entre slots de staging y producción.  
-- Cómo configurar y probar **escalado automático** del App Service según la demanda.  
-- Cómo utilizar **Azure Load Testing** para validar el rendimiento de la aplicación bajo carga.  
-- Cómo monitorear métricas de cliente y servidor para asegurar el correcto funcionamiento del escalado.
+- How to create and configure an **Azure App Service** for PHP web applications  
+- How to create and manage **deployment slots** for staging and production  
+- How to configure **automatic deployment** from an external GitHub repository  
+- How to perform a **swap** between staging and production slots  
+- How to configure and test **autoscaling** of the App Service based on metrics  
+- How to use **Azure Load Testing** to validate web application performance under load  
+- How to monitor client and server metrics to ensure correct autoscaling behavior
 
 ## Full Documentation
-Para instrucciones paso a paso con capturas en español, ver: **Lab09a Documentación Completa**
+For step-by-step instructions with screenshots in **English**, see [Lab09a Full Documentation](Lab09a_Full_Documentation.md)  
+For the **Spanish version**, see [Lab09a Documentación Completa](Lab09a_Documentacion_Completa.md)
