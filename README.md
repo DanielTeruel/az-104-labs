@@ -13,7 +13,7 @@ The goal of this repository is to document my learning journey for the **AZ-104 
 
 - Identity and access management (Azure AD & RBAC)
 - Governance and compliance (Management Groups, Azure Policy, Tags, Locks)
-- Core Azure services (Virtual Machines, Storage)
+- Core Azure services (Virtual Machines, Storage, Web Apps)
 - High availability, scalability, and cost optimization
 - Hands-on experience using **Azure Portal, PowerShell, and Azure CLI**
 
@@ -33,6 +33,12 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
   Governance with Azure Policy, resource tagging, and resource locks.  
   👉 [`lab02b–Azure-Policy-Governance`](./lab02b–Azure-Policy-Governance)
 
+### 📄 Infrastructure as Code
+
+- **Lab 03 – Azure ARM Templates**  
+  Deployment of Azure resources using ARM templates.  
+  👉 [`lab03–Azure-ARM-Templates`](./lab03–Azure-ARM-Templates)
+
 ### 💾 Storage
 
 - **Lab 07 – Manage Azure Storage**  
@@ -45,6 +51,12 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
   Virtual Machines, Availability Zones, VM Scale Sets (VMSS), autoscaling, and VM creation using Portal, PowerShell, and Azure CLI.  
   👉 [`lab08–Manage-Virtual-Machines`](./lab08–Manage-Virtual-Machines)
 
+### 🌐 Web Apps
+
+- **Lab 09a – Azure Web Apps**  
+  Implementation and management of Azure Web Apps, deployment slots, continuous deployment from GitHub, slot swapping, auto-scaling, and load testing with Azure Load Testing.  
+  👉 [`lab09a–Azure-Web-Apps`](./lab09a–Azure-Web-Apps)
+
 ---
 
 ## 🛠 Technologies & Tools Used
@@ -55,6 +67,8 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 - Virtual Machines & VM Scale Sets  
 - Azure Storage  
 - Azure Policy & RBAC  
+- Azure App Service & Deployment Slots  
+- Azure Load Testing  
 
 ---
 
