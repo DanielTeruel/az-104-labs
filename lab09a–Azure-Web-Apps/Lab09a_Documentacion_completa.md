@@ -1,32 +1,36 @@
-# Lab 09a - Implementación de Web Apps
+# Lab 09a - Implementación de Web Apps (AZ-104)
 
 ## Introducción
+
 En este laboratorio, exploramos la implementación y gestión de **Azure Web Apps**, incluyendo la creación de **deployment slots**, despliegue continuo desde **GitHub** y configuración de **escalado automático**.  
 Se cubren conceptos clave como: Plan de App Service, espacios de implementación, intercambio entre slots, escalado automático basado en métricas y pruebas de carga con **Azure Load Testing**.
 
 ---
 
 ## Escenario Empresarial
+
 La organización desea migrar sus sitios web desde un **centro de datos local (on-premises)** a Azure, evitando costes de hardware y obteniendo escalabilidad y disponibilidad.  
 Actualmente los sitios están en servidores Windows con PHP, y el hardware se encuentra próximo a su fin de vida útil.  
+
 Se requiere un entorno en la nube flexible que permita probar actualizaciones en un slot de **staging** antes de desplegar en **producción**, y que pueda **escalar automáticamente** ante picos de demanda.
 
 ---
 
 ## Objetivos del Laboratorio
-- Crear y configurar un **App Service** en Azure para ejecutar aplicaciones web en PHP.  
-- Configurar **deployment slots** para staging y producción, permitiendo pruebas previas antes del despliegue en producción.  
-- Implementar despliegue continuo desde un **repositorio GitHub externo**.  
-- Realizar un **swap** entre los slots de staging y producción.  
-- Configurar y probar **escalado automático** del App Service según la demanda.  
-- Validar el funcionamiento de la aplicación mediante **Azure Load Testing**.  
-- Limpiar los recursos creados al finalizar el laboratorio.
+
+- Crear y configurar un **App Service** en Azure para ejecutar aplicaciones web en PHP  
+- Configurar **deployment slots** para staging y producción, permitiendo pruebas previas antes del despliegue en producción  
+- Implementar despliegue continuo desde un **repositorio GitHub externo**  
+- Realizar un **swap** entre los slots de staging y producción  
+- Configurar y probar **escalado automático** del App Service según la demanda  
+- Validar el funcionamiento de la aplicación mediante **Azure Load Testing**  
+- Limpiar los recursos creados al finalizar el laboratorio
 
 ---
 
-## 1. Creación del App Service y configuración inicial
+## Tarea 1 – Creación del App Service y configuración inicial
 
-Para iniciar el laboratorio, creé un **grupo de recursos** donde alojar todos los servicios necesarios.
+Como siempre, comienzo creando un **grupo de recursos** donde se agruparán todos los servicios necesarios.
 
 ![Creación del grupo de recursos](screenshots/1.1.png)
 
@@ -35,10 +39,10 @@ Para iniciar el laboratorio, creé un **grupo de recursos** donde alojar todos l
 Desde la página principal del portal de Azure busqué **App Services** y procedí a crear uno nuevo.  
 Configuré el App Service con los siguientes parámetros:
 
-- Nombre único: `az104lab09`
-- Publicación: **Código**
-- Pila de ejecución: **PHP 8.2**
-- Sistema operativo: **Linux**
+- Nombre único: `az104lab09`  
+- Publicación: **Código**  
+- Pila de ejecución: **PHP 8.2**  
+- Sistema operativo: **Linux**  
 - Plan de precios inicial: **Básico B1**
 
 ![Configuración del App Service](screenshots/1.2.png)
@@ -49,7 +53,7 @@ Tras revisar la configuración, validé los ajustes y lancé la creación de la 
 
 ---
 
-## 2. Configuración de Deployment Slots
+## Tarea 2 – Configuración de Deployment Slots
 
 Una vez finalizado el despliegue, comprobé que el App Service se había creado correctamente y estaba operativo.
 
@@ -57,6 +61,7 @@ Una vez finalizado el despliegue, comprobé que el App Service se había creado 
 
 Intenté añadir un **nuevo espacio de implementación**, pero el plan **B1** no permite esta funcionalidad.  
 Por ello, actualicé el **Plan de App Service** a **Premium V3 – P0V3**, lo que habilita la creación de espacios de implementación.
+
 ### Actualización del plan de App Service
 
 ![Añadir slot de staging](screenshots/1.5.png)
@@ -69,21 +74,21 @@ Una vez actualizada la SKU, accedí a:
 
 Añadí un nuevo slot con las siguientes características:
 
-- Nombre del slot: **staging**
+- Nombre del slot: **staging**  
 - Clonar configuración: **No clonar configuración**
 
 ![Verificación de los slots](screenshots/2.1.png)
 
 Tras la creación, verifiqué que ya disponía de **dos espacios de implementación**:
 
-- Producción
+- Producción  
 - Staging
 
 ![Confirmación de slots creados](screenshots/2.2.png)
 
 ---
 
-## 3. Despliegue del código desde GitHub
+## Tarea 3 – Despliegue del código desde GitHub
 
 ### Configuración del Centro de Implementación
 
@@ -93,8 +98,8 @@ Con los slots creados, el siguiente paso fue configurar el **despliegue automát
 
 Dentro del slot **staging**, accedí al **Centro de implementación** y configuré los siguientes ajustes:
 
-- Origen: **Git externo**
-- Repositorio: `https://github.com/Azure-Samples/php-docs-hello-world`
+- Origen: **Git externo**  
+- Repositorio: `https://github.com/Azure-Samples/php-docs-hello-world`  
 - Rama: **master**
 
 Guardé los cambios para iniciar el despliegue automático.
@@ -103,7 +108,7 @@ Guardé los cambios para iniciar el despliegue automático.
 
 ---
 
-## 4. Intercambio entre slots (Swap)
+## Tarea 4 – Intercambio entre slots (Swap)
 
 Una vez completado el despliegue, seleccioné el **enlace predeterminado del slot de staging**.  
 La página mostraba correctamente el mensaje **Hello World**, confirmando que el código se había desplegado con éxito.
@@ -114,7 +119,7 @@ Después de validar el funcionamiento en staging, regresé a la sección de **Es
 
 Configuré el intercambio con los valores por defecto:
 
-- Origen: **staging**
+- Origen: **staging**  
 - Destino: **producción**
 
 Inicié el proceso de intercambio para mover el código validado a producción.
@@ -128,7 +133,7 @@ El contenido que antes se mostraba en staging ahora estaba visible en producció
 
 ---
 
-## 5. Configuración de escalado automático y pruebas de carga
+## Tarea 5 – Configuración de escalado automático y pruebas de carga
 
 Con la aplicación ya en producción, accedí al **plan de App Service → Escalar horizontalmente** y configuré el **escalado automático**, estableciendo una **ráfaga máxima de 2 instancias**.
 
@@ -166,6 +171,8 @@ También revisé las métricas del **lado del servidor**, validando el comportam
 
 Estas métricas confirmaron que el **escalado automático** funcionaba correctamente ante un aumento de demanda.
 
+---
+
 ## Limpieza de Recursos
 
 Para evitar costes innecesarios, eliminé el **Grupo de Recursos**, lo que eliminó todos los recursos asociados al laboratorio.
@@ -181,5 +188,3 @@ Para evitar costes innecesarios, eliminé el **Grupo de Recursos**, lo que elimi
 
 ```powershell
 Remove-AzResourceGroup -Name az104-rg9
-
-
