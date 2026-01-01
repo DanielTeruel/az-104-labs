@@ -1,3 +1,6 @@
+
+# Lab 09a - Implement Web Apps
+
 ## Overview
 En este laboratorio, exploramos la implementación y gestión de **Azure Web Apps**, incluyendo la creación de **deployment slots**, despliegue continuo desde **GitHub** y configuración de **autoscaling**.  
 Se cubren conceptos clave como: App Service Plan, deployment slots, swap entre slots, escalado automático basado en métricas y pruebas de carga con Azure Load Testing.
