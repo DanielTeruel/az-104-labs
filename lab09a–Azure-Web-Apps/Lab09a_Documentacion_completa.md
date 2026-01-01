@@ -81,13 +81,13 @@ Tras la creación, verifiqué que ya disponía de **dos espacios de implementaci
 
 ![Confirmación de slots creados](screenshots/2.2.png)
 
-Con los slots creados, el siguiente paso fue configurar el **despliegue automático del código**.
-
 ---
 
 ## 3. Despliegue del código desde GitHub
 
 ### Configuración del Centro de Implementación
+
+Con los slots creados, el siguiente paso fue configurar el **despliegue automático del código**.
 
 ![Configuración Deployment Center](screenshots/3.1.png)
 
