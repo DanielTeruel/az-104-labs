@@ -51,18 +51,17 @@ Tras revisar la configuración, validé los ajustes y lancé la creación de la 
 
 ## 2. Configuración de Deployment Slots
 
-### Actualización del plan de App Service
-
 Una vez finalizado el despliegue, comprobé que el App Service se había creado correctamente y estaba operativo.
 
 ![Error al añadir slot en B1](screenshots/1.4.png)
 
 Intenté añadir un **nuevo espacio de implementación**, pero el plan **B1** no permite esta funcionalidad.  
 Por ello, actualicé el **Plan de App Service** a **Premium V3 – P0V3**, lo que habilita la creación de espacios de implementación.
-
-### Creación del slot de staging
+### Actualización del plan de App Service
 
 ![Añadir slot de staging](screenshots/1.5.png)
+
+### Creación del slot de staging
 
 Una vez actualizada la SKU, accedí a:
 
