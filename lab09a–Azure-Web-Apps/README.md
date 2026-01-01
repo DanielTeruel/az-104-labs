@@ -29,4 +29,4 @@ A solution was implemented that allows:
 
 ## Full Documentation
 For step-by-step instructions with screenshots in **English**, see [Lab09a Full Documentation](Lab09a_Full_Documentation.md)  
-For the **Spanish version**, see [Lab09a Documentación Completa](Lab09a_Documentacion_Completa.md)
+For the **Spanish version**, see [Lab09a Documentación Completa](Lab09a_Documentacion_completa.md)
