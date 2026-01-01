@@ -124,11 +124,11 @@ Inicié el proceso de intercambio para mover el código validado a producción.
 Una vez finalizado el swap, accedí al **enlace predeterminado del App Service en producción**.  
 El contenido que antes se mostraba en staging ahora estaba visible en producción.
 
+![Configuración escalado automático](screenshots/4.2.png)
+
 ---
 
 ## 5. Configuración de escalado automático y pruebas de carga
-
-![Configuración escalado automático](screenshots/4.2.png)
 
 Con la aplicación ya en producción, accedí al **plan de App Service → Escalar horizontalmente** y configuré el **escalado automático**, estableciendo una **ráfaga máxima de 2 instancias**.
 
