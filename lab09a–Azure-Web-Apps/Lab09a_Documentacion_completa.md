@@ -132,9 +132,9 @@ El contenido que antes se mostraba en staging ahora estaba visible en producció
 
 Con la aplicación ya en producción, accedí al **plan de App Service → Escalar horizontalmente** y configuré el **escalado automático**, estableciendo una **ráfaga máxima de 2 instancias**.
 
-### Pruebas de carga con Azure Load Testing
-
 ![Creación Load Test](screenshots/5.1.png)
+
+### Pruebas de carga con Azure Load Testing
 
 Busqué **Azure Load Testing** desde el portal de Azure.
 
