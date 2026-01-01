@@ -47,13 +47,13 @@ Tras revisar la configuración, validé los ajustes y lancé la creación de la 
 
 ![App Service creado correctamente](screenshots/1.3.png)
 
-Una vez finalizado el despliegue, comprobé que el App Service se había creado correctamente y estaba operativo.
-
 ---
 
 ## 2. Configuración de Deployment Slots
 
 ### Actualización del plan de App Service
+
+Una vez finalizado el despliegue, comprobé que el App Service se había creado correctamente y estaba operativo.
 
 ![Error al añadir slot en B1](screenshots/1.4.png)
 
