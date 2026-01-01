@@ -60,9 +60,10 @@ Una vez finalizado el despliegue, comprobé que el App Service se había creado 
 ![Error al añadir slot en B1](screenshots/1.4.png)
 
 Intenté añadir un **nuevo espacio de implementación**, pero el plan **B1** no permite esta funcionalidad.  
-Por ello, actualicé el **Plan de App Service** a **Premium V3 – P0V3**, lo que habilita la creación de espacios de implementación.
 
 ### Actualización del plan de App Service
+
+Por ello, actualicé el **Plan de App Service** a **Premium V3 – P0V3**, lo que habilita la creación de espacios de implementación.
 
 ![Añadir slot de staging](screenshots/1.5.png)
 
