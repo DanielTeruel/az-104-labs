@@ -1,4 +1,4 @@
-# Lab 05 – Implement Connectivity Between Networks in Azure (AZ-104)
+# Lab 05 – Implement Connectivity Between Networks (AZ-104)
 
 ## Summary
 
