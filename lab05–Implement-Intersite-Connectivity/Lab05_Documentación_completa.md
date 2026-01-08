@@ -31,9 +31,10 @@ La organización separa los servicios centrales (Core Services) del resto de dep
 
 Como siempre, comencé creando el **grupo de recursos** donde se alojarán todos los recursos del laboratorio.
 
-![1.1](screenshots/1.1.png)
 
 A continuación, fui a **Máquinas virtuales** y creé una nueva VM con la siguiente configuración:
+
+![1.1](screenshots/1.1.png)
 
 Configuración | Valor
 --- | ---
