@@ -178,8 +178,20 @@ Y confirmé que la zona DNS privada estaba correctamente vinculada a la red virt
 
 ---
 
-# Limpieza
+## Limpieza de recursos
 
-Para evitar costes innecesarios, eliminé los recursos creados durante el laboratorio.
+Para evitar costes innecesarios, elimino el Grupo de Recursos, lo que borra todos los recursos asociados.
 
 ![4.11](screenshots/4.11.png)
+
+Azure Portal:
+
+Grupos de Recursos → Eliminar Grupo de Recursos
+
+Azure PowerShell:
+
+```powershell
+Remove-AzResourceGroup -Name az104-rg8
+```
+
+
