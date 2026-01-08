@@ -73,6 +73,15 @@ Seleccioné el grupo de recursos y el nombre que tendría la nueva VNet.
 
 ![2.5](screenshots/2.5.png)
 
+## Plantillas ARM utilizadas
+
+Las plantillas completas utilizadas en este laboratorio pueden consultarse aquí:
+
+- 📄 [template.json](arm/template.json)
+- 📄 [parameters.json](arm/parameters.json)
+
+Estos archivos pueden descargarse y reutilizarse directamente para reproducir el laboratorio.
+
 Inicié el despliegue y, cuando terminó, verifiqué que la nueva red virtual se había creado correctamente.
 
 ![2.6](screenshots/2.6.png)
