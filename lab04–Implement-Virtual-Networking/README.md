@@ -1,7 +1,3 @@
-Perfecto, usando **exactamente la misma estructura** que tu Lab 07, aquí tienes el README para tu repo:
-
----
-
 # Lab 04 – Implement Virtual Networking (AZ-104)
 
 Notes and documentation for Lab 04 of AZ-104.
