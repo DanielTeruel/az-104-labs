@@ -198,7 +198,7 @@ La creé con el nombre correspondiente en el grupo de recursos.
 
 Una vez creada, entré en ella y agregué una nueva ruta.
 
-
+![6.5](screenshots/6.5.png)
 
 La ruta quedó configurada así:
 
@@ -210,19 +210,17 @@ La ruta quedó configurada así:
 | Siguiente salto               | Dispositivo virtual |
 | Dirección del siguiente salto | 10.0.1.7            |
 
-![6.5](screenshots/6.5.png)
+![6.6](screenshots/6.6.png)
 
 Después fui a **Configuración → Subredes** y asocié la tabla de rutas a la subred.
 
-![6.6](screenshots/6.6.png)
+![6.7](screenshots/6.7.png)
 
 Seleccioné la red **CoreServicesVnet** y la subred **Core**.
 
-![6.7](screenshots/6.7.png)
+![6.8](screenshots/6.8.png)
 
 De esta manera, la subred Core queda asociada a la ruta personalizada.
-
-![6.8](screenshots/6.8.png)
 
 ![6.9](screenshots/6.9.png)
 
