@@ -200,7 +200,7 @@ Grupos de Recursos → Eliminar Grupo de Recursos
 Azure PowerShell:
 
 ```powershell
-Remove-AzResourceGroup -Name az104-rg8
+Remove-AzResourceGroup -Name az104-rg4
 ```
 
 
