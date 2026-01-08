@@ -30,12 +30,5 @@ Additionally, the organization needs to:
 
 ## Full Documentation
 
-For step-by-step instructions with screenshots, see [Lab04 Full Documentation](Lab04_Full_Documentation.md)
+For step-by-step instructions with screenshots, see [Lab04 Full Documentation](Lab04_Full_Documentation.md)        
 For the Spanish version, see [Lab04 Documentación Completa](Lab04_Documentacion_completa.md)
-
----
-
-Si quieres, en el siguiente mensaje te ayudo a:
-
-* Adaptarlo exactamente a tu tono personal
-* O escribir directamente el **Lab04_Full_Documentation.md** con estructura pro de portfolio como hiciste con el 07 😎
