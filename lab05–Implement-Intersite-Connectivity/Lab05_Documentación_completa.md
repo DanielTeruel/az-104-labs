@@ -71,6 +71,8 @@ Después, deshabilité el **diagnóstico de arranque**.
 
 Finalmente, revisé la configuración y creé la máquina virtual.
 
+![1.6](screenshots/1.6.png)
+
 ---
 
 ## Tarea 2 – Crear ManufacturingVM en otra red virtual
@@ -90,7 +92,7 @@ Usuario | localadmin
 Contraseña | ********
 Puertos de entrada públicos | Ninguno
 
-![1.6](screenshots/1.6.png)
+![2.1](screenshots/2.1.png)
 
 Durante la creación, configuré una nueva red virtual con estos parámetros:
 
@@ -101,7 +103,7 @@ Espacio de direcciones | 172.16.0.0/16
 Subred | Manufacturing
 Rango de subred | 172.16.0.0/24
 
-![2.1](screenshots/2.1.png)
+![2.2](screenshots/2.2.png)
 
 ---
 
@@ -114,7 +116,7 @@ Una vez creadas ambas máquinas virtuales, fui a **Network Watcher → Soluciona
 - Protocolo: TCP  
 - Puerto: 3389  
 
-![2.2](screenshots/2.2.png)
+
 
 Al ejecutar el diagnóstico, la prueba de conectividad resultó **Inaccesible**, ya que las VNets aún no estaban emparejadas.
 
