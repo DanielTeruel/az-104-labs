@@ -1,7 +1,7 @@
 # Lab 04 – Implementación de Redes Virtuales (AZ-104)
 
 ## Descripción
-En este laboratorio se implementa una arquitectura básica de **redes virtuales en Azure (VNets)** —no VLANs—, incluyendo la creación de VNets y subredes, el despliegue mediante **plantillas ARM**, la configuración de **Grupos de Seguridad de Red (NSG)** y **Grupos de Seguridad de Aplicación (ASG)**, y la creación de **zonas DNS públicas y privadas**.
+En este laboratorio se implementa una arquitectura básica de **redes virtuales en Azure (VNets)**, incluyendo la creación de VNets y subredes, el despliegue mediante **plantillas ARM**, la configuración de **Grupos de Seguridad de Red (NSG)** y **Grupos de Seguridad de Aplicación (ASG)**, y la creación de **zonas DNS públicas y privadas**.
 
 > Nota: Si en algún momento aparece el término “VLAN”, en realidad se refiere a **VNet (Red Virtual)**, que es el concepto correcto en Azure.
 
