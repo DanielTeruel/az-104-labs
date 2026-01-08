@@ -116,11 +116,9 @@ Una vez creadas ambas máquinas virtuales, fui a **Network Watcher → Soluciona
 - Protocolo: TCP  
 - Puerto: 3389  
 
-
+![3.1](screenshots/3.1.png)
 
 Al ejecutar el diagnóstico, la prueba de conectividad resultó **Inaccesible**, ya que las VNets aún no estaban emparejadas.
-
-![3.1](screenshots/3.1.png)
 
 ![3.2](screenshots/3.2.png)
 
@@ -188,17 +186,19 @@ Ahora fui a **CoreServicesVnet → Subredes** y agregué una nueva subred:
 
 ![6.1](screenshots/6.1.png)
 
-Después, fui a **Tablas de rutas** y creé una nueva.
-
 ![6.2](screenshots/6.2.png)
 
-La creé con el nombre correspondiente en el grupo de recursos.
+Después, fui a **Tablas de rutas** y creé una nueva.
 
 ![6.3](screenshots/6.3.png)
 
-Una vez creada, entré en ella y agregué una nueva ruta.
+La creé con el nombre correspondiente en el grupo de recursos.
 
 ![6.4](screenshots/6.4.png)
+
+Una vez creada, entré en ella y agregué una nueva ruta.
+
+
 
 La ruta quedó configurada así:
 
