@@ -159,3 +159,85 @@ Ejecuté el siguiente comando:
 
 ```powershell
 Test-NetConnection 10.0.0.4 -Port 3389
+````
+
+![5.2](screenshots/5.2.png)
+
+Como se puede ver, el resultado es:
+
+```
+TcpTestSucceeded = True
+```
+
+Por lo tanto, la conectividad entre ambas VNets es correcta.
+
+![5.3](screenshots/5.3.png)
+
+---
+
+## Tarea 6 – Crear una ruta personalizada (UDR)
+
+Ahora fui a **CoreServicesVnet → Subredes** y agregué una nueva subred:
+
+| Configuración | Valor       |
+| ------------- | ----------- |
+| Nombre        | perimeter   |
+| Rango         | 10.0.1.0/24 |
+
+![6.1](screenshots/6.1.png)
+
+Después, fui a **Tablas de rutas** y creé una nueva.
+
+![6.2](screenshots/6.2.png)
+
+La creé con el nombre correspondiente en el grupo de recursos.
+
+![6.3](screenshots/6.3.png)
+
+Una vez creada, entré en ella y agregué una nueva ruta.
+
+![6.4](screenshots/6.4.png)
+
+La ruta quedó configurada así:
+
+| Configuración                 | Valor               |
+| ----------------------------- | ------------------- |
+| Nombre de la ruta             | PerimetertoCore     |
+| Destino                       | Direcciones IP      |
+| Dirección de destino          | 10.0.0.0/16         |
+| Siguiente salto               | Dispositivo virtual |
+| Dirección del siguiente salto | 10.0.1.7            |
+
+![6.5](screenshots/6.5.png)
+
+Después fui a **Configuración → Subredes** y asocié la tabla de rutas a la subred.
+
+![6.6](screenshots/6.6.png)
+
+Seleccioné la red **CoreServicesVnet** y la subred **Core**.
+
+![6.7](screenshots/6.7.png)
+
+De esta manera, la subred Core queda asociada a la ruta personalizada.
+
+![6.8](screenshots/6.8.png)
+
+![6.9](screenshots/6.9.png)
+
+---
+
+## Limpieza de recursos
+
+Para evitar costes innecesarios, eliminé el grupo de recursos, lo que borra todos los recursos asociados al laboratorio.
+
+Desde el portal de Azure:
+
+```
+Grupo de recursos → Eliminar grupo de recursos
+```
+
+O usando PowerShell:
+
+```powershell
+Remove-AzResourceGroup -Name az104-rg5
+```
