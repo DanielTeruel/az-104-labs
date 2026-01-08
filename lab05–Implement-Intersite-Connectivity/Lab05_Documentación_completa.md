@@ -31,10 +31,9 @@ La organización separa los servicios centrales (Core Services) del resto de dep
 
 Como siempre, comencé creando el **grupo de recursos** donde se alojarán todos los recursos del laboratorio.
 
+![1.1](screenshots/1.1.png)
 
 A continuación, fui a **Máquinas virtuales** y creé una nueva VM con la siguiente configuración:
-
-![1.1](screenshots/1.1.png)
 
 Configuración | Valor
 --- | ---
@@ -49,10 +48,11 @@ Usuario | localadmin
 Contraseña | ********
 Puertos de entrada públicos | Ninguno
 
+![1.2](screenshots/1.2.png)
 
 Durante la creación, creé también la red virtual donde se conectará esta VM.
 
-![1.2](screenshots/1.2.png)
+![1.3](screenshots/1.3.png)
 
 Configuré la red virtual con los siguientes parámetros:
 
@@ -63,15 +63,13 @@ Espacio de direcciones | 10.0.0.0/16
 Subred | Core
 Rango de subred | 10.0.0.0/24
 
-![1.3](screenshots/1.3.png)
+![1.4](screenshots/1.4.png)
 
 Después, deshabilité el **diagnóstico de arranque**.
 
-![1.4](screenshots/1.4.png)
+![1.5](screenshots/1.5.png)
 
 Finalmente, revisé la configuración y creé la máquina virtual.
-
-![1.5](screenshots/1.5.png)
 
 ---
 
