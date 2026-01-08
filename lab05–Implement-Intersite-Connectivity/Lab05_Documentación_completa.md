@@ -1,7 +1,6 @@
 # Lab 05 – Implementar Conectividad entre Redes en Azure (AZ-104)
 
 ## Resumen
-
 En este laboratorio trabajé con **conectividad entre redes virtuales en Azure** para permitir la comunicación entre recursos ubicados en diferentes VNets. Durante la práctica:
 
 - Creé dos máquinas virtuales en dos redes virtuales diferentes.
@@ -14,7 +13,6 @@ En este laboratorio trabajé con **conectividad entre redes virtuales en Azure**
 Este laboratorio me permitió entender cómo se interconectan redes en Azure y cómo se puede controlar el flujo de tráfico entre subredes y VNets.
 
 ## Escenario de Negocio
-
 La organización separa los servicios centrales (Core Services) del resto de departamentos, como el área de fabricación. Sin embargo, en algunos escenarios es necesario que ambos entornos puedan comunicarse. Para ello, se debe configurar conectividad segura entre redes virtuales separadas y controlar el enrutamiento del tráfico.
 
 ## Objetivos del Laboratorio
@@ -33,9 +31,10 @@ La organización separa los servicios centrales (Core Services) del resto de dep
 
 Como siempre, comencé creando el **grupo de recursos** donde se alojarán todos los recursos del laboratorio.
 
-![1.1](screenshots/1.1.png)
 
 A continuación, fui a **Máquinas virtuales** y creé una nueva VM con la siguiente configuración:
+
+![1.1](screenshots/1.1.png)
 
 Configuración | Valor
 --- | ---
@@ -50,9 +49,10 @@ Usuario | localadmin
 Contraseña | ********
 Puertos de entrada públicos | Ninguno
 
-![1.2](screenshots/1.2.png)
 
 Durante la creación, creé también la red virtual donde se conectará esta VM.
+
+![1.2](screenshots/1.2.png)
 
 Configuré la red virtual con los siguientes parámetros:
 
@@ -77,8 +77,6 @@ Finalmente, revisé la configuración y creé la máquina virtual.
 
 ## Tarea 2 – Crear ManufacturingVM en otra red virtual
 
-![1.6](screenshots/1.6.png)
-
 A continuación, creé una segunda máquina virtual en otra red virtual distinta con la siguiente configuración:
 
 Configuración | Valor
@@ -94,7 +92,7 @@ Usuario | localadmin
 Contraseña | ********
 Puertos de entrada públicos | Ninguno
 
-![2.1](screenshots/2.1.png)
+![1.6](screenshots/1.6.png)
 
 Durante la creación, configuré una nueva red virtual con estos parámetros:
 
@@ -105,11 +103,11 @@ Espacio de direcciones | 172.16.0.0/16
 Subred | Manufacturing
 Rango de subred | 172.16.0.0/24
 
+![2.1](screenshots/2.1.png)
+
 ---
 
 ## Tarea 3 – Probar conectividad con Network Watcher
-
-![2.2](screenshots/2.2.png)
 
 Una vez creadas ambas máquinas virtuales, fui a **Network Watcher → Solucionar problemas de conexión** y configuré una prueba:
 
@@ -118,9 +116,11 @@ Una vez creadas ambas máquinas virtuales, fui a **Network Watcher → Soluciona
 - Protocolo: TCP  
 - Puerto: 3389  
 
-![3.1](screenshots/3.1.png)
+![2.2](screenshots/2.2.png)
 
 Al ejecutar el diagnóstico, la prueba de conectividad resultó **Inaccesible**, ya que las VNets aún no estaban emparejadas.
+
+![3.1](screenshots/3.1.png)
 
 ![3.2](screenshots/3.2.png)
 
@@ -128,24 +128,24 @@ Al ejecutar el diagnóstico, la prueba de conectividad resultó **Inaccesible**,
 
 ## Tarea 4 – Configurar el emparejamiento entre VNets
 
-![4.2](screenshots/4.2.png)
-
 Fui a **Redes virtuales → CoreServicesVnet → Emparejamientos** y agregué un nuevo emparejamiento.
 
-![4.3](screenshots/4.3.png)
+![4.2](screenshots/4.2.png)
 
 Configuré el emparejamiento entre **CoreServicesVnet** y **ManufacturingVnet**, permitiendo:
 
 - Acceso entre ambas VNets
 - Tráfico reenviado (tráfico que no se origina en esta VNet)
 
-![4.4](screenshots/4.4.png)
+![4.3](screenshots/4.3.png)
 
 Apliqué la configuración tanto de CoreServices hacia Manufacturing como de Manufacturing hacia CoreServices.
 
-![4.5](screenshots/4.5.png)
+![4.4](screenshots/4.4.png)
 
 Una vez creado, verifiqué que en ambas VNets el estado del emparejamiento aparecía como **Conectado**.
+
+![4.5](screenshots/4.5.png)
 
 ![4.6](screenshots/4.6.png)
 
@@ -153,11 +153,93 @@ Una vez creado, verifiqué que en ambas VNets el estado del emparejamiento apare
 
 ## Tarea 5 – Probar conectividad usando PowerShell
 
-![5.1](screenshots/5.1.png)
-
 Ahora probé la conectividad desde **ManufacturingVM** usando **Ejecutar comando → RunPowerShellScript**.
+
+![5.1](screenshots/5.1.png)
 
 Ejecuté el siguiente comando:
 
 ```powershell
 Test-NetConnection 10.0.0.4 -Port 3389
+````
+
+![5.2](screenshots/5.2.png)
+
+Como se puede ver, el resultado es:
+
+```
+TcpTestSucceeded = True
+```
+
+Por lo tanto, la conectividad entre ambas VNets es correcta.
+
+![5.3](screenshots/5.3.png)
+
+---
+
+## Tarea 6 – Crear una ruta personalizada (UDR)
+
+Ahora fui a **CoreServicesVnet → Subredes** y agregué una nueva subred:
+
+| Configuración | Valor       |
+| ------------- | ----------- |
+| Nombre        | perimeter   |
+| Rango         | 10.0.1.0/24 |
+
+![6.1](screenshots/6.1.png)
+
+Después, fui a **Tablas de rutas** y creé una nueva.
+
+![6.2](screenshots/6.2.png)
+
+La creé con el nombre correspondiente en el grupo de recursos.
+
+![6.3](screenshots/6.3.png)
+
+Una vez creada, entré en ella y agregué una nueva ruta.
+
+![6.4](screenshots/6.4.png)
+
+La ruta quedó configurada así:
+
+| Configuración                 | Valor               |
+| ----------------------------- | ------------------- |
+| Nombre de la ruta             | PerimetertoCore     |
+| Destino                       | Direcciones IP      |
+| Dirección de destino          | 10.0.0.0/16         |
+| Siguiente salto               | Dispositivo virtual |
+| Dirección del siguiente salto | 10.0.1.7            |
+
+![6.5](screenshots/6.5.png)
+
+Después fui a **Configuración → Subredes** y asocié la tabla de rutas a la subred.
+
+![6.6](screenshots/6.6.png)
+
+Seleccioné la red **CoreServicesVnet** y la subred **Core**.
+
+![6.7](screenshots/6.7.png)
+
+De esta manera, la subred Core queda asociada a la ruta personalizada.
+
+![6.8](screenshots/6.8.png)
+
+![6.9](screenshots/6.9.png)
+
+---
+
+## Limpieza de recursos
+
+Para evitar costes innecesarios, eliminé el grupo de recursos, lo que borra todos los recursos asociados al laboratorio.
+
+Desde el portal de Azure:
+
+```
+Grupo de recursos → Eliminar grupo de recursos
+```
+
+O usando PowerShell:
+
+```powershell
+Remove-AzResourceGroup -Name az104-rg5
+```
