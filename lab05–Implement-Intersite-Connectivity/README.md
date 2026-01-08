@@ -31,4 +31,4 @@ To achieve this, the organization needs to:
 ## Full Documentation
 
 For step-by-step instructions with screenshots, see [Lab05 Full Documentation](Lab05_Full_Documentation.md)      
-For the Spanish version, see [Lab05 Documentación Completa](Lab05_Documentacion_completa.md)
+For the Spanish version, see [Lab05 Documentación Completa](Lab05_Documentación_completa.md)
