@@ -1,4 +1,4 @@
-# Lab 05 – Implementar Conectividad entre Redes en Azure (AZ-104)
+# Lab 05 – Implementar Conectividad entre Redes (AZ-104)
 
 ## Resumen
 En este laboratorio trabajé con **conectividad entre redes virtuales en Azure** para permitir la comunicación entre recursos ubicados en diferentes VNets. Durante la práctica:
