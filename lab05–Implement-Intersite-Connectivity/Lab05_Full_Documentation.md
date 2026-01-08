@@ -242,6 +242,3 @@ Or using PowerShell:
 
 ```powershell
 Remove-AzResourceGroup -Name az104-rg5
-```
-
-```
