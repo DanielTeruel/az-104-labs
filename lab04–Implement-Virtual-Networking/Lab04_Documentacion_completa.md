@@ -1,27 +1,27 @@
-# Lab 04 – Implement Virtual Networking (AZ-104)
+# Lab 04 – Implementación de Redes Virtuales (AZ-104)
 
 ## Descripción
-En este laboratorio se implementa una arquitectura básica de **redes virtuales en Azure (VNets)** —no VLANs—, incluyendo la creación de VNets y subredes, el despliegue mediante **plantillas ARM**, la configuración de **Network Security Groups (NSG)** y **Application Security Groups (ASG)**, y la creación de **zonas DNS públicas y privadas**.
+En este laboratorio se implementa una arquitectura básica de **redes virtuales en Azure (VNets)** —no VLANs—, incluyendo la creación de VNets y subredes, el despliegue mediante **plantillas ARM**, la configuración de **Grupos de Seguridad de Red (NSG)** y **Grupos de Seguridad de Aplicación (ASG)**, y la creación de **zonas DNS públicas y privadas**.
 
-> Nota: Si en algún momento aparece el término “VLAN”, en realidad se refiere a **VNet (Virtual Network)**, que es el concepto correcto en Azure.
+> Nota: Si en algún momento aparece el término “VLAN”, en realidad se refiere a **VNet (Red Virtual)**, que es el concepto correcto en Azure.
 
 ---
 
 ## Índice
-- Task 1: Create a virtual network with subnets using the portal
-- Task 2: Create a virtual network and subnets using a template
-- Task 3: Create and configure communication between an ASG and an NSG
-- Task 4: Configure public and private Azure DNS zones
+- Tarea 1: Crear una red virtual con subredes usando el portal
+- Tarea 2: Crear una red virtual y subredes usando una plantilla
+- Tarea 3: Crear y configurar la comunicación entre un ASG y un NSG
+- Tarea 4: Configurar zonas DNS públicas y privadas en Azure
 
 ---
 
-# Task 1: Create a virtual network with subnets using the portal
+# Tarea 1: Crear una red virtual con subredes usando el portal
 
 ### Objetivo
 Crear la red **CoreServicesVnet** y sus subredes desde el portal de Azure.
 
-### Paso 1 — Crear la VNet
-Primero creamos la **VNet** en el grupo de recursos y región que deseemos.
+### Paso 1 — Crear la red virtual
+Primero creamos la **red virtual (VNet)** en el grupo de recursos y región que deseemos.
 
 ![1.1](screenshots/1.1.png)
 
@@ -33,7 +33,7 @@ Ajustamos los parámetros de la VNet con el espacio de direcciones **10.20.0.0/1
 ![1.2](screenshots/1.2.png)
 
 ### Paso 3 — Revisar y crear
-Revisamos la configuración y creamos el recurso. Una vez desplegado, entramos en la VNet y verificamos que tanto la VNet como las subredes se han creado correctamente.
+Revisamos la configuración y creamos el recurso. Una vez desplegado, entramos en la VNet y verificamos que tanto la red virtual como las subredes se han creado correctamente.
 
 ![1.3](screenshots/1.3.png)
 
@@ -44,15 +44,15 @@ Dentro de la VNet, vamos a **Automatización → Exportar plantilla** y en el ap
 
 ---
 
-# Task 2: Create a virtual network and subnets using a template
+# Tarea 2: Crear una red virtual y subredes usando una plantilla
 
 ### Objetivo
-Crear la VNet **ManufacturingVnet** reutilizando la plantilla ARM exportada.
+Crear la red **ManufacturingVnet** reutilizando la plantilla ARM exportada.
 
-### Paso 1 — Modificar la plantilla y parámetros
+### Paso 1 — Modificar la plantilla y los parámetros
 Abrimos los archivos en **Visual Studio Code** y realizamos los siguientes cambios:
 
-**Cambios para la VNet ManufacturingVnet**
+**Cambios para la red ManufacturingVnet**
 - Reemplazar `CoreServicesVnet` por `ManufacturingVnet`.
 - Reemplazar `10.20.0.0` por `10.30.0.0`.
 
@@ -79,11 +79,11 @@ En el portal de Azure buscamos **Implementar una plantilla personalizada** y car
 
 ![2.4](screenshots/2.4.png)
 
-Seleccionamos el grupo de recursos y el nombre que tendrá la VNet.
+Seleccionamos el grupo de recursos y el nombre que tendrá la red virtual.
 
 ![2.5](screenshots/2.5.png)
 
-Lanzamos el despliegue y, cuando termina, verificamos en **Virtual Networks** que la nueva VNet se ha creado correctamente desde JSON.
+Lanzamos el despliegue y, cuando termina, verificamos en **Redes virtuales** que la nueva VNet se ha creado correctamente desde JSON.
 
 ![2.6](screenshots/2.6.png)
 
@@ -93,22 +93,22 @@ También comprobamos que las subredes se han creado correctamente.
 
 ---
 
-# Task 3: Create and configure communication between an ASG and an NSG
+# Tarea 3: Crear y configurar la comunicación entre un ASG y un NSG
 
 ### Objetivo
 Crear un **ASG** y un **NSG**, asociar el NSG a una subred y configurar reglas de entrada y salida.
 
 ### Paso 1 — Crear el ASG
-Vamos a **Application Security Groups** y creamos un nuevo grupo.
+Vamos a **Grupos de seguridad de aplicaciones** y creamos un nuevo grupo.
 
 ![3.1](screenshots/3.1.png)
 
-Seleccionamos grupo de recursos, nombre y región y lo creamos.
+Seleccionamos el grupo de recursos, el nombre y la región y lo creamos.
 
 ![3.2](screenshots/3.2.png)
 
 ### Paso 2 — Crear el NSG
-Creamos ahora el **Network Security Group**.
+Creamos ahora el **Grupo de seguridad de red (NSG)**.
 
 ![3.3](screenshots/3.3.png)
 
@@ -125,31 +125,31 @@ Entramos en las reglas del NSG.
 
 ![3.6](screenshots/3.6.png)
 
-**Regla de entrada (Inbound)**:
+**Regla de entrada**:
 - Origen: ASG
-- Puertos origen: *
-- Destino: Any
-- Puertos destino: 80, 443
+- Puertos de origen: *
+- Destino: Cualquiera
+- Puertos de destino: 80, 443
 - Protocolo: TCP
-- Acción: Allow
+- Acción: Permitir
 - Prioridad: 100
 
 Esto permite el tráfico desde el ASG hacia la subred.
 
 ![3.7](screenshots/3.7.png)
 
-**Regla de salida (Outbound)**:
-- Origen: Any
+**Regla de salida**:
+- Origen: Cualquiera
 - Destino: Internet
 - Puertos: *
-- Protocolo: Any
-- Acción: Deny
+- Protocolo: Cualquiera
+- Acción: Denegar
 
 Esto bloquea la salida a Internet.
 
 ![3.8](screenshots/3.8.png)
 
-Comprobamos que la regla de entrada está permitiendo tráfico desde el ASG por 80/443.
+Comprobamos que la regla de entrada está permitiendo tráfico desde el ASG por los puertos 80 y 443.
 
 ![3.9](screenshots/3.9.png)
 
@@ -159,10 +159,10 @@ Y que la regla de salida está denegando cualquier tráfico hacia Internet.
 
 ---
 
-# Task 4: Configure public and private Azure DNS zones
+# Tarea 4: Configurar zonas DNS públicas y privadas en Azure
 
 ### Objetivo
-Crear una **zona DNS pública** y una **zona DNS privada**, con sus registros y vínculos a VNets.
+Crear una **zona DNS pública** y una **zona DNS privada**, con sus registros y vínculos a redes virtuales.
 
 ### Paso 1 — Crear zona DNS pública
 Creamos una zona DNS pública. En este caso: **contoso7.com**.
@@ -176,7 +176,7 @@ Una vez creada, entramos en **Administración de DNS → Conjuntos de registros*
 Añadimos un nuevo registro:
 - Nombre: **www**
 - Tipo: **A**
-- IP: **10.1.1.4**
+- Dirección IP: **10.1.1.4**
 
 ![4.3](screenshots/4.3.png)
 
@@ -193,7 +193,7 @@ Creamos ahora una **zona DNS privada**.
 
 ![4.5](screenshots/4.5.png)
 
-Una vez creada, añadimos un **vínculo de VNet** desde Administración de DNS.
+Una vez creada, añadimos un **vínculo de red virtual** desde Administración de DNS.
 
 ![4.6](screenshots/4.6.png)
 
@@ -201,9 +201,9 @@ Vinculamos la zona DNS privada a la **ManufacturingVnet**.
 
 ![4.7](screenshots/4.7.png)
 
-Añadimos un registro A:
+Añadimos un registro de tipo A:
 - Nombre: **sensorvm**
-- IP: **10.1.1.4**
+- Dirección IP: **10.1.1.4**
 
 ![4.8](screenshots/4.8.png)
 
@@ -211,7 +211,7 @@ Comprobamos que el registro se ha creado correctamente.
 
 ![4.9](screenshots/4.9.png)
 
-Y que la zona DNS privada está correctamente vinculada a la VNet.
+Y que la zona DNS privada está correctamente vinculada a la red virtual.
 
 ![4.10](screenshots/4.10.png)
 
@@ -219,6 +219,6 @@ Y que la zona DNS privada está correctamente vinculada a la VNet.
 
 # Limpieza de recursos
 
-No olvidamos **borrar los recursos** una vez finalizada la práctica para evitar costes innecesarios.
+No olvidamos **eliminar los recursos** una vez finalizada la práctica para evitar costes innecesarios.
 
 ![4.11](screenshots/4.11.png)
