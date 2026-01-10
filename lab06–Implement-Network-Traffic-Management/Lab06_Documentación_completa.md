@@ -7,6 +7,12 @@ En este laboratorio se explora la **gestión del tráfico de red en Azure**, imp
 
 Se despliega una infraestructura base utilizando **plantillas ARM**, se balancea tráfico HTTP entre varias máquinas virtuales y se configuran **reglas de enrutamiento basadas en rutas** para distribuir imágenes y vídeos desde servidores específicos.
 
+Para más información sobre la plantilla ARM utilizada en este laboratorio, revisa la carpeta [ARM Files](./arm/) que incluye:  
+- [`template.json`](./arm/template.json)  
+- [`parameters.json`](./arm/parameters.json)  
+- [`explanations.md` (English)](./arm/explanations.md)  
+- [`explicaciones.md` (Spanish)](./arm/explicaciones.md)  
+
 ## Escenario de negocio
 
 La organización dispone de un sitio web público que recibe tráfico desde Internet.  
@@ -36,11 +42,13 @@ Nos dirigimos al **Azure Portal → Implementar una plantilla personalizada** y 
 
 ![Implementar plantilla personalizada](screenshots/1.1.png)
 
-En el editor, pegamos el código de la plantilla ARM proporcionada.
+En el editor, pegamos el código de la plantilla ARM proporcionada.  
+> Para revisar la plantilla completa y su explicación detallada, consulta: [template.json](./arm/template.json) y [explanations.md](./arm/explanations.md).
 
 ![Plantilla ARM](screenshots/1.2.png)
 
-A continuación, cargamos el archivo de parámetros correspondiente.
+A continuación, cargamos el archivo de parámetros correspondiente.  
+> Archivo de parámetros: [parameters.json](./arm/parameters.json)
 
 ![Parámetros ARM](screenshots/1.3.png)
 
@@ -63,6 +71,7 @@ Posteriormente, instalamos manualmente el servicio IIS desde **Cloud Shell (Powe
 ![IIS instalado](screenshots/2.12.png)
 
 ---
+
 
 ## Tarea 2 – Configurar un Azure Load Balancer
 
