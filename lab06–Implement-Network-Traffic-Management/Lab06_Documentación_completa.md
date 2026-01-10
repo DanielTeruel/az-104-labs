@@ -169,7 +169,7 @@ En el apartado de abajo del todo agregamos reglas basadas en rutas:
 ![Ruta imágenes](screenshots/3.12.png)  
 
 - `/video/*` → **az104-videobe**
-- 
+  
 ![Ruta vídeos](screenshots/3.13.png)
 
 Verificamos que las reglas estén correctamente configuradas.
