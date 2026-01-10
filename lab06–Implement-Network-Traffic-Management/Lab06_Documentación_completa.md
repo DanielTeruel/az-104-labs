@@ -201,3 +201,10 @@ Esto confirma que el **Application Gateway funciona correctamente con enrutamien
 Para evitar costes innecesarios, eliminamos todos los recursos creados durante el laboratorio borrando el **grupo de recursos**.
 
 ![Eliminar recursos](screenshots/3.21.png)
+
+O usando PowerShell:
+
+```powershell
+Remove-AzResourceGroup -Name az104-rg5
+```
+
