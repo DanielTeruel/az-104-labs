@@ -1,91 +1,111 @@
-# Lab 06 – Implement Network Traffic Management (AZ-104)
+# Lab 06 – Implementar Gestión de Tráfico de Red (AZ-104)
 
-## Overview
+## Introducción
 
-En este laboratorio se implementa y prueba la **gestión del tráfico de red en Azure**, utilizando un **Azure Load Balancer (capa 4)** y un **Azure Application Gateway (capa 7)**.  
-Se despliega una infraestructura base mediante **plantillas ARM**, se balancea tráfico HTTP entre máquinas virtuales y se configuran **reglas basadas en rutas** para distribuir imágenes y vídeos desde distintos servidores.
+En este laboratorio se explora la **gestión del tráfico de red en Azure**, implementando y probando dos soluciones clave:
+**Azure Load Balancer (capa 4)** y **Azure Application Gateway (capa 7)**.
 
----
-
-## Business Scenario
-
-La organización dispone de un sitio web público y necesita distribuir el tráfico entrante entre varias máquinas virtuales para mejorar la disponibilidad y escalabilidad.  
-Además, requiere enrutar distintos tipos de contenido (imágenes y vídeos) hacia servidores específicos, utilizando capacidades avanzadas de balanceo a nivel de aplicación.
+Se despliega una infraestructura base utilizando **plantillas ARM**, se balancea tráfico HTTP entre varias máquinas virtuales y se configuran **reglas de enrutamiento basadas en rutas** para distribuir imágenes y vídeos desde servidores específicos.
 
 ---
 
-## Task 1 – Deploy Infrastructure Using a Custom Template
+## Escenario de negocio
+
+La organización dispone de un sitio web público que recibe tráfico desde Internet.  
+Es necesario distribuir las solicitudes entrantes entre varias máquinas virtuales para mejorar la **disponibilidad, resiliencia y escalabilidad**.
+
+Además, la organización necesita servir distintos tipos de contenido:
+- **Imágenes** desde un servidor específico  
+- **Vídeos** desde otro servidor diferente  
+
+Para ello, se decide implementar un **Azure Load Balancer** para balanceo básico y un **Azure Application Gateway** para balanceo avanzado a nivel de aplicación.
+
+---
+
+## Objetivos del laboratorio
+
+- Desplegar infraestructura usando plantillas ARM  
+- Configurar un Azure Load Balancer público  
+- Validar el balanceo de tráfico entre máquinas virtuales  
+- Configurar un Azure Application Gateway  
+- Implementar reglas de enrutamiento basadas en rutas  
+- Verificar el estado de los backends  
+- Limpiar los recursos al finalizar el laboratorio  
+
+---
+
+## Tarea 1 – Desplegar la infraestructura usando una plantilla personalizada
 
 Nos dirigimos al **Azure Portal → Implementar una plantilla personalizada** y seleccionamos **Crear una plantilla propia en el editor**.
 
-![Custom Template](screenshots/1.1.png)
+![Implementar plantilla personalizada](screenshots/1.1.png)
 
 En el editor, pegamos el código de la plantilla ARM proporcionada.
 
-![Paste Template](screenshots/1.2.png)
+![Plantilla ARM](screenshots/1.2.png)
 
 A continuación, cargamos el archivo de parámetros correspondiente.
 
-![Paste Parameters](screenshots/1.3.png)
+![Parámetros ARM](screenshots/1.3.png)
 
-Una vez cargados la plantilla y los parámetros, revisamos que los detalles sean correctos, seleccionamos el **grupo de recursos** y configuramos una **contraseña de administrador** para acceder a las máquinas virtuales.
+Una vez cargados la plantilla y los parámetros, revisamos que los valores sean correctos, seleccionamos el **grupo de recursos** y configuramos una **contraseña de administrador** para acceder a las máquinas virtuales.
 
-![Review Parameters](screenshots/1.4.png)
+![Revisión de parámetros](screenshots/1.4.png)
 
-Al validar el despliegue, en mi caso se produjo un error debido a **limitaciones de la suscripción**, ya que la **IIS Custom Script Extension** no estaba permitida en la región seleccionada.  
-Por este motivo, se eliminó la instalación automática de IIS desde la plantilla y se decidió instalar IIS manualmente más adelante.
+Durante la validación del despliegue, en mi caso apareció un error debido a **limitaciones de la suscripción**, ya que la **IIS Custom Script Extension** no estaba permitida en la región utilizada.  
+Por este motivo, se eliminó la instalación automática de IIS desde la plantilla.
 
-![Deployment Error](screenshots/1.5.png)
+![Error de despliegue](screenshots/1.5.png)
 
 Una vez eliminada la instalación de IIS de la plantilla, la validación se completa correctamente.
 
-![Validation Successful](screenshots/1.6.png)
+![Validación correcta](screenshots/1.6.png)
 
-Posteriormente, instalamos el servicio IIS manualmente desde **Cloud Shell (PowerShell)** usando un script personalizado.
+Posteriormente, instalamos manualmente el servicio IIS desde **Cloud Shell (PowerShell)** utilizando un script personalizado.
 
-> Nota: La numeración correcta de las capturas para este paso es **2.11 y 2.12** debido a un error previo.
+> Nota: Por un error de numeración previo, las capturas correspondientes a este paso son **2.11 y 2.12**.
 
-![Install IIS Script](screenshots/2.11.png)  
-![IIS Installed](screenshots/2.12.png)
+![Instalación IIS](screenshots/2.11.png)  
+![IIS instalado](screenshots/2.12.png)
 
 ---
 
-## Task 2 – Configure an Azure Load Balancer
+## Tarea 2 – Configurar un Azure Load Balancer
 
-Creamos un **Azure Load Balancer** desde el portal, seleccionando el grupo de recursos, **SKU Standard**, tipo **Público** y ámbito **Regional**.
+Creamos un **Azure Load Balancer** desde el Azure Portal, seleccionando el grupo de recursos, **SKU Standard**, tipo **Público** y ámbito **Regional**.
 
-![Create Load Balancer](screenshots/2.1.png)
+![Crear Load Balancer](screenshots/2.1.png)
 
-Agregamos una **IP pública** para el frontend del Load Balancer, llamada **az104-fe**, con una IP pública denominada **az104-lbpip**.
+Agregamos una **IP pública** para el frontend del Load Balancer, llamada **az104-fe**, y la IP pública **az104-lbpip**.
 
 ![Frontend IP](screenshots/2.2.png)
 
-Una vez configurada, verificamos que el frontend tiene correctamente asignada la IP pública.
+Verificamos que el frontend queda correctamente configurado con su IP pública.
 
-![Frontend Configured](screenshots/2.3.png)
+![Frontend configurado](screenshots/2.3.png)
 
-A continuación, configuramos el **backend pool**, llamado **az104-be**, seleccionando la **VNet creada en el Task 1** y agregando las máquinas virtuales desplegadas previamente.
+A continuación, creamos el **backend pool** llamado **az104-be**, seleccionando la **VNet creada en la Tarea 1** y agregando las máquinas virtuales desplegadas previamente.
 
-![Backend Pool](screenshots/2.4.png)  
-![Backend Details](screenshots/2.5.png)  
-![Backend VMs](screenshots/2.6.png)
+![Backend pool](screenshots/2.4.png)  
+![Detalle backend](screenshots/2.5.png)  
+![VMs backend](screenshots/2.6.png)
 
 Revisamos la configuración y creamos el Load Balancer.
 
-![Create Load Balancer](screenshots/2.7.png)
+![Crear Load Balancer](screenshots/2.7.png)
 
 Una vez creado, accedemos al recurso y añadimos una **regla de equilibrio de carga**.
 
-![Add Rule](screenshots/2.8.png)
+![Añadir regla](screenshots/2.8.png)
 
-Configuramos la regla **az104-lbrule**, utilizando el frontend y backend creados, protocolo **TCP**, puerto **80**, y un **sondeo de estado** llamado **az104-hp**, con protocolo TCP, puerto 80 y un intervalo de 5 segundos.  
+Configuramos la regla **az104-lbrule**, usando protocolo **TCP**, puerto **80**, el frontend y backend configurados, y un **sondeo de estado** llamado **az104-hp**, con intervalo de 5 segundos.  
 Desactivamos la persistencia de sesión.
 
-![Load Balancing Rule](screenshots/2.9.png)
+![Regla de balanceo](screenshots/2.9.png)
 
-Configuramos las **reglas de salida (SNAT)** para permitir acceso a Internet a los miembros del backend y guardamos los cambios.
+Configuramos las **reglas de salida (SNAT)** para permitir acceso a Internet a los miembros del backend.
 
-![Outbound Rules](screenshots/2.10.png)
+![Reglas de salida](screenshots/2.10.png)
 
 Al acceder a la IP pública desde el navegador, se muestra la página web con el mensaje:
 
@@ -93,91 +113,84 @@ Al acceder a la IP pública desde el navegador, se muestra la página web con el
 
 ![Hello World](screenshots/2.13.png)
 
-Si ejecutamos múltiples peticiones consecutivas, podemos observar que la respuesta alterna entre ambas máquinas virtuales, confirmando que el tráfico se distribuye correctamente.
+Al realizar múltiples peticiones, se observa que la respuesta alterna entre ambas máquinas virtuales, confirmando que el balanceo funciona correctamente.
 
-![Load Balancing Test](screenshots/2.14.png)
+![Prueba Load Balancer](screenshots/2.14.png)
 
 ---
 
-## Task 3 – Configure an Azure Application Gateway
+## Tarea 3 – Configurar un Azure Application Gateway
 
-Accedemos a **Virtual Networks** y, dentro de la VNet creada anteriormente, revisamos las subredes existentes.
+Accedemos a **Virtual Networks** y revisamos la VNet creada anteriormente junto con sus subredes existentes.
 
-![Existing Subnets](screenshots/3.1.png)
+![Subredes existentes](screenshots/3.1.png)
 
-Agregamos una nueva subred llamada **subnet-appgw** con los siguientes valores:
+Agregamos una nueva subred llamada **subnet-appgw** con el rango **10.60.3.224/27**.
 
-- Address range: **10.60.3.224/27**
+![Crear subnet AppGW](screenshots/3.2.png)
 
-![Create AppGW Subnet](screenshots/3.2.png)
+Creamos un **Application Gateway** llamado **az104-appgw**, con SKU **Standard V2**, **2 instancias**, sin HTTP/2, IPv4, y seleccionamos la VNet y la subred **subnet-appgw**.
 
-Creamos un **Application Gateway** con nombre **az104-appgw**, SKU **Standard V2**, **2 instancias**, sin HTTP/2, IPv4, y seleccionamos la VNet y la subred **subnet-appgw**.
+![Crear Application Gateway](screenshots/3.4.png)
 
-![Create Application Gateway](screenshots/3.4.png)
+Configuramos una **IP pública estándar y estática** para el frontend.
 
-En el frontend, creamos una **IP pública estándar y estática**.
-
-![Frontend IP AppGW](screenshots/3.5.png)
+![Frontend AppGW](screenshots/3.5.png)
 
 Agregamos ambas máquinas virtuales al backend pool principal **az104-appgwbe**.
 
-![Backend Pool](screenshots/3.6.png)
+![Backend principal](screenshots/3.6.png)
 
 Creamos un backend pool específico para **vídeos** llamado **az104-videobe**, asignando la **VM1**.
 
-![Video Backend](screenshots/3.7.png)
+![Backend vídeos](screenshots/3.7.png)
 
 Creamos otro backend pool para **imágenes**, asignando la **VM0**.
 
-![Image Backend](screenshots/3.8.png)
+![Backend imágenes](screenshots/3.8.png)
 
 Configuramos la regla **az104-gwrule** y el listener **az104-listener**, escuchando HTTP en el puerto 80.
 
-![Listener Configuration](screenshots/3.9.png)
+![Listener](screenshots/3.9.png)
 
-Configuramos los destinos del backend y creamos una nueva configuración HTTP llamada **az104-http**.
+Configuramos la configuración HTTP del backend llamada **az104-http**.
 
-![Backend Settings](screenshots/3.10.png)
+![Configuración HTTP](screenshots/3.10.png)
 
 Agregamos reglas basadas en rutas:
-
 - `/image/*` → **az104-imagebe**
 - `/video/*` → **az104-videobe**
 
-![Path-Based Rules](screenshots/3.11.png)  
-![Image Rule](screenshots/3.12.png)  
-![Video Rule](screenshots/3.13.png)
+![Reglas por ruta](screenshots/3.11.png)  
+![Ruta imágenes](screenshots/3.12.png)  
+![Ruta vídeos](screenshots/3.13.png)
 
-Verificamos que las reglas están correctamente configuradas.
+Verificamos que las reglas estén correctamente configuradas.
 
-![Rules Overview](screenshots/3.14.png)
+![Resumen reglas](screenshots/3.14.png)
 
-Revisamos la configuración completa del frontend, backend y reglas.
+Revisamos toda la configuración del Application Gateway y procedemos a su creación.
 
-![Final Review](screenshots/3.15.png)
+![Revisión final](screenshots/3.15.png)  
+![Crear AppGW](screenshots/3.16.png)
 
-Creamos el Application Gateway.
+Una vez desplegado, en **Supervisión → Estado del backend**, comprobamos que todos los backends responden correctamente con código **200**.
 
-![Create AppGW](screenshots/3.16.png)
-
-Una vez desplegado, en **Supervisión → Estado del backend**, verificamos que todos los servidores responden correctamente con código **200**.
-
-![Backend Health](screenshots/3.17.png)
+![Estado backend](screenshots/3.17.png)
 
 Al acceder a:
-
 - `http://<IP-publica>/image` → se muestra la **VM0**
 - `http://<IP-publica>/video` → se muestra la **VM1**
 
-![Image Test](screenshots/3.19.png)  
-![Video Test](screenshots/3.20.png)
+![Prueba imágenes](screenshots/3.19.png)  
+![Prueba vídeos](screenshots/3.20.png)
 
 Esto confirma que el **Application Gateway funciona correctamente con enrutamiento basado en rutas**.
 
 ---
 
-## Resource Cleanup
+## Limpieza de recursos
 
-Como siempre, al finalizar el laboratorio eliminamos todos los recursos para evitar costes innecesarios.
+Para evitar costes innecesarios, eliminamos todos los recursos creados durante el laboratorio borrando el **grupo de recursos**.
 
-![Delete Resources](screenshots/3.21.png)
+![Eliminar recursos](screenshots/3.21.png)
