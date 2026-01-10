@@ -106,7 +106,7 @@ Desactivamos la persistencia de sesión.
 
 ![Regla de balanceo](screenshots/2.9.png)
 
-Configuramos las **reglas de salida (SNAT)** para permitir acceso a Internet a los miembros del backend.
+Seleccionamos las **reglas de salida (SNAT)** para permitir acceso a Internet a los miembros del backend.
 
 ![Reglas de salida](screenshots/2.10.png)
 
