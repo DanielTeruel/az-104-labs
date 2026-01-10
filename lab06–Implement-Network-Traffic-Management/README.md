@@ -33,4 +33,4 @@ A Load Balancer is used for basic traffic distribution, and an Application Gatew
 ## Full Documentation
 
 For step-by-step instructions with screenshots, see [Lab06 Full Documentation](Lab06_Full_Documentation.md)     
-For the Spanish version, see [Lab06 Documentación Completa](Lab06_Documentacion_completa.md)
+For the Spanish version, see [Lab06 Documentación Completa](Lab06_Documentación_completa.md)
