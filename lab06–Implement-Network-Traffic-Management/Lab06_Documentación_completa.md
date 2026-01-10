@@ -59,8 +59,6 @@ Una vez eliminada la instalación de IIS de la plantilla, la validación se comp
 
 Posteriormente, instalamos manualmente el servicio IIS desde **Cloud Shell (PowerShell)** utilizando un script personalizado.
 
-> Nota: Por un error de numeración previo, las capturas correspondientes a este paso son **2.11 y 2.12**.
-
 ![Instalación IIS](screenshots/2.11.png)  
 ![IIS instalado](screenshots/2.12.png)
 
