@@ -199,9 +199,11 @@ Una vez desplegado, en **Supervisión → Estado del backend**, comprobamos que 
 
 Al acceder a:
 - `http://<IP-publica>/image` → se muestra la **VM0**
+  
+![Prueba imágenes](screenshots/3.19.png)
+  
 - `http://<IP-publica>/video` → se muestra la **VM1**
-
-![Prueba imágenes](screenshots/3.19.png)  
+  
 ![Prueba vídeos](screenshots/3.20.png)
 
 Esto confirma que el **Application Gateway funciona correctamente con enrutamiento basado en rutas**.
