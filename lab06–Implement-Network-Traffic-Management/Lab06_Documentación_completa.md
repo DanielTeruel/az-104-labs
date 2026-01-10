@@ -43,6 +43,18 @@ Nos dirigimos al **Azure Portal → Implementar una plantilla personalizada** y 
 ![Implementar plantilla personalizada](screenshots/1.1.png)
 
 En el editor, pegamos el código de la plantilla ARM proporcionada.  
+
+### Resumen de la plantilla ARM
+
+La plantilla ARM despliega el **entorno base del laboratorio**, que incluye:
+
+* **2 máquinas virtuales** con Windows Server 2019
+* **1 red virtual (VNet)** con 2 subredes
+* **2 interfaces de red (NICs)**, una por VM
+* **1 grupo de seguridad de red (NSG)** con reglas básicas de RDP y HTTP
+
+> Permite tener un entorno de prueba mínimo listo para implementar Load Balancer y Application Gateway.
+
 > Para revisar la plantilla completa y su explicación detallada, consulta: [template.json](./arm/template.json) y [explanations.md](./arm/explanations.md).
 
 ![Plantilla ARM](screenshots/1.2.png)
