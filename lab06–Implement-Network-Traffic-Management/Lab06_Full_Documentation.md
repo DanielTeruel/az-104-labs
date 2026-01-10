@@ -206,9 +206,11 @@ Once deployed, in **Monitoring → Backend Health**, verify all backends respond
 Accessing:
 
 * `http://<public-IP>/image` → displays **VM0**
-* `http://<public-IP>/video` → displays **VM1**
 
 ![Test images](screenshots/3.19.png)
+
+* `http://<public-IP>/video` → displays **VM1**
+  
 ![Test videos](screenshots/3.20.png)
 
 This confirms that the **Application Gateway works correctly with route-based routing**.
