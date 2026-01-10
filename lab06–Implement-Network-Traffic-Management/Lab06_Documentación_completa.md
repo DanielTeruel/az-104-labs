@@ -205,6 +205,6 @@ Para evitar costes innecesarios, eliminamos todos los recursos creados durante e
 O usando PowerShell:
 
 ```powershell
-Remove-AzResourceGroup -Name az104-rg5
+Remove-AzResourceGroup -Name az104-rg6
 ```
 
