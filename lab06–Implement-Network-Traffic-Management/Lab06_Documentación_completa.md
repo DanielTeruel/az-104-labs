@@ -7,8 +7,6 @@ En este laboratorio se explora la **gestión del tráfico de red en Azure**, imp
 
 Se despliega una infraestructura base utilizando **plantillas ARM**, se balancea tráfico HTTP entre varias máquinas virtuales y se configuran **reglas de enrutamiento basadas en rutas** para distribuir imágenes y vídeos desde servidores específicos.
 
----
-
 ## Escenario de negocio
 
 La organización dispone de un sitio web público que recibe tráfico desde Internet.  
@@ -19,8 +17,6 @@ Además, la organización necesita servir distintos tipos de contenido:
 - **Vídeos** desde otro servidor diferente  
 
 Para ello, se decide implementar un **Azure Load Balancer** para balanceo básico y un **Azure Application Gateway** para balanceo avanzado a nivel de aplicación.
-
----
 
 ## Objetivos del laboratorio
 
