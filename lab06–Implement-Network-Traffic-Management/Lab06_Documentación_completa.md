@@ -160,12 +160,16 @@ Configuramos la configuración HTTP del backend llamada **az104-http**.
 
 ![Configuración HTTP](screenshots/3.10.png)
 
-Agregamos reglas basadas en rutas:
-- `/image/*` → **az104-imagebe**
-- `/video/*` → **az104-videobe**
+En el apartado de abajo del todo agregamos reglas basadas en rutas:
 
-![Reglas por ruta](screenshots/3.11.png)  
+![Reglas por ruta](screenshots/3.11.png) 
+
+- `/image/*` → **az104-imagebe**
+
 ![Ruta imágenes](screenshots/3.12.png)  
+
+- `/video/*` → **az104-videobe**
+- 
 ![Ruta vídeos](screenshots/3.13.png)
 
 Verificamos que las reglas estén correctamente configuradas.
