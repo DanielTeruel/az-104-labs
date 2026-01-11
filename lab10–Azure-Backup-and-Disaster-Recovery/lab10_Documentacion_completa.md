@@ -133,7 +133,7 @@ Revisé la configuración y creé la cuenta de almacenamiento.
 
 Después regresé a la Recovery Services Vault y accedí a **Supervisión → Configuración de diagnóstico** para agregar una nueva configuración.
 
-![4.4](screenshots/4.4.png)
+![4.5](screenshots/4.5.png)
 
 Creé una configuración llamada **Logs and Metrics to storage** y seleccioné las siguientes métricas y registros:
 
@@ -143,11 +143,11 @@ Creé una configuración llamada **Logs and Metrics to storage** y seleccioné l
 - Azure Site Recovery Jobs  
 - Azure Site Recovery Events  
 
-![4.5](screenshots/4.5.png)
+![4.6](screenshots/4.6.png)
 
 Finalmente, configuré como destino la cuenta de almacenamiento creada anteriormente, seleccionando la opción **Archivar en una cuenta de almacenamiento**.
 
-![4.6](screenshots/4.6.png)
+![4.4](screenshots/4.7.png)
 
 ---
 
