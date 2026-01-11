@@ -39,10 +39,10 @@ This lab reflects a real-world **business continuity scenario**, where protectin
 
 The following ARM files were used to deploy and configure the lab environment:
 
-* 📄 [template.json](arm/template.json) – Defines the full infrastructure, including VM, network, NIC, public IP, and NSG
-* 📄 [parameters.json](arm/parameters.json) – Parameter file separating configuration values, including VM names, size, network, and admin user
+* 📄 [template.json](template.json) – Defines the full infrastructure, including VM, network, NIC, public IP, and NSG
+* 📄 [parameters.json](parameters.json) – Parameter file separating configuration values, including VM names, size, network, and admin user
 
 ## Full Documentation
 
-For step-by-step instructions with screenshots in **English**, see [Lab10_Full_Documentation.md](/Lab10_Full_Documentation.md)      
-For the **Spanish version**, see [lab10_Documentacion_completa.md](/lab10_Documentacion_completa.md)
+For step-by-step instructions with screenshots in **English**, see [Lab10_Full_Documentation.md](Lab10_Full_Documentation.md)
+For the **Spanish version**, see [lab10_Documentacion_completa.md](lab10_Documentacion_completa.md)
