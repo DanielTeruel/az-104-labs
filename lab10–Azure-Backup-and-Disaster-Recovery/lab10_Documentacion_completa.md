@@ -1,68 +1,47 @@
 # Lab 10 – Implementar Azure Backup y Recuperación ante Desastres (AZ-104)
 
-## Introducción
+## Resumen
+En este laboratorio trabajé con **Azure Backup y Azure Site Recovery** para implementar una solución de **protección de datos y recuperación ante desastres** en Azure. Durante la práctica:
 
-En este laboratorio se implementan soluciones de **protección de datos y recuperación ante desastres** en Azure utilizando **Recovery Services Vault**, **Azure Backup** y **Azure Site Recovery**.
+- Desplegué una máquina virtual usando una **plantilla ARM personalizada**.
+- Creé y configuré una **Recovery Services Vault**.
+- Implementé **copias de seguridad a nivel de máquina virtual** mediante Azure Backup.
+- Configuré **políticas de backup** con retención y ejecución programada.
+- Habilité **monitorización y diagnósticos** enviando logs y métricas a una cuenta de almacenamiento.
+- Configuré la **replicación entre regiones** usando Azure Site Recovery.
 
-Se despliega una máquina virtual mediante una **plantilla ARM**, se configura la **copia de seguridad a nivel de VM**, se habilita la **monitorización mediante diagnósticos**, y finalmente se implementa la **replicación entre regiones** para escenarios de recuperación ante desastres.
+Este laboratorio me permitió entender cómo proteger cargas de trabajo críticas y preparar un entorno para escenarios reales de **continuidad de negocio y recuperación ante desastres** en Azure.
 
----
+## Escenario de Negocio
+La organización necesita proteger una máquina virtual crítica frente a pérdidas de datos, eliminaciones accidentales y fallos regionales. Para ello, se requiere una solución que permita realizar copias de seguridad automáticas, conservar los datos durante un período definido y replicar la infraestructura a una región secundaria para recuperación ante desastres.
 
-## Escenario de negocio
+## Objetivos del Laboratorio
 
-La organización necesita proteger una máquina virtual crítica frente a:
-- Pérdida accidental de datos  
-- Eliminaciones no intencionadas  
-- Fallos regionales  
-
-Para ello, se requiere:
-- Copias de seguridad automáticas con retención definida  
-- Monitorización centralizada de los trabajos de backup  
-- Replicación de la máquina virtual a una región secundaria  
-
----
-
-## Objetivos del laboratorio
-
-- Desplegar infraestructura mediante plantillas ARM  
-- Crear y configurar una Recovery Services Vault  
-- Implementar Azure Backup a nivel de máquina virtual  
-- Monitorizar Azure Backup con cuentas de almacenamiento  
-- Habilitar replicación de máquinas virtuales entre regiones  
+- Desplegar una máquina virtual mediante una plantilla ARM.
+- Crear y configurar una Recovery Services Vault.
+- Configurar Azure Backup para una máquina virtual.
+- Crear y aplicar una directiva de copia de seguridad.
+- Monitorizar Azure Backup mediante diagnósticos y cuentas de almacenamiento.
+- Implementar replicación entre regiones con Azure Site Recovery.
+- Aplicar buenas prácticas de limpieza de recursos.
 
 ---
 
-## Tarea 1 – Desplegar infraestructura con plantilla ARM
+## Tarea 1 – Desplegar infraestructura usando una plantilla ARM
 
-### 1.1 Implementar una plantilla personalizada
-
-Desde el **Portal de Azure**, accedemos a:
-
-> Implementar una plantilla personalizada → Crear tu propia plantilla en el editor
+Comencé accediendo al **Portal de Azure** y seleccionando **Implementar una plantilla personalizada**.
 
 ![1.1](screenshots/1.1.png)
 
----
-
-### 1.2 Cargar la plantilla ARM
-
-Pegamos o cargamos la **plantilla ARM** proporcionada para el laboratorio, que despliega la red virtual y la máquina virtual que se utilizará para las pruebas de backup.
+A continuación, elegí la opción de crear una plantilla propia usando el **editor** y pegué la plantilla ARM correspondiente al laboratorio.
 
 ![1.2](screenshots/1.2.png)
 
----
-
-### 1.3 Cargar el archivo de parámetros
-
-Cargamos el archivo de **parámetros ARM**, donde se definen valores como el tamaño de la VM y el usuario administrador.
+Después cargué el archivo de **parámetros**, donde se definen valores como el nombre de la máquina virtual y las credenciales de acceso.
 
 ![1.3](screenshots/1.3.png)
 
----
-
-### 1.4 Revisar y desplegar
-
-Revisamos los detalles del despliegue, seleccionamos el **grupo de recursos** y definimos una **contraseña segura** para la máquina virtual.
+Finalmente, revisé los detalles del despliegue, seleccioné una **contraseña segura** para la máquina virtual y lancé la implementación.
 
 ![1.4](screenshots/1.4.png)
 
@@ -70,51 +49,27 @@ Revisamos los detalles del despliegue, seleccionamos el **grupo de recursos** y 
 
 ## Tarea 2 – Crear y configurar una Recovery Services Vault
 
-### 2.1 Crear una nueva bóveda
-
-Accedemos a **Recovery Services vaults** y seleccionamos **Crear**.
+Una vez desplegada la máquina virtual, fui a **Recovery Services vaults** y creé un nuevo almacén.
 
 ![2.1](screenshots/2.1.png)
 
----
-
-### 2.2 Configuración básica
-
-Definimos el **grupo de recursos**, la **región** y el **nombre de la bóveda**.
+Seleccioné el **grupo de recursos**, la **región** y el **nombre** del almacén.
 
 ![2.2](screenshots/2.2.png)
 
----
-
-### 2.3 Crear la bóveda
-
-Revisamos la configuración y creamos la Recovery Services Vault.
+Revisé la configuración y creé la Recovery Services Vault.
 
 ![2.3](screenshots/2.3.png)
 
----
-
-### 2.4 Configuración de copia de seguridad
-
-Dentro de la bóveda, en **Configuración → Propiedades**, localizamos la configuración de copia de seguridad y hacemos clic en **Actualizar**.
+Una vez creada, entré en **Configuración → Propiedades** y localicé el apartado de **configuración de copia de seguridad**, donde hice clic en **Actualizar**.
 
 ![2.4](screenshots/2.4.png)
 
----
-
-### 2.5 Redundancia y restauración
-
-Verificamos que:
-- El tipo de replicación sea **Redundancia geográfica (GRS)**
-- La restauración entre regiones esté deshabilitada
+Verifiqué que el tipo de replicación estaba configurado como **Redundancia geográfica (GRS)** y que la restauración entre regiones estaba deshabilitada.
 
 ![2.5](screenshots/2.5.png)
 
----
-
-### 2.6 Eliminación temporal
-
-En la configuración de eliminación temporal, confirmamos que el período de retención sea de **14 días**.
+Por último, comprobé que la **eliminación temporal** estaba habilitada con un período de retención de **14 días**.
 
 ![2.6](screenshots/2.6.png)
 
@@ -122,149 +77,93 @@ En la configuración de eliminación temporal, confirmamos que el período de re
 
 ## Tarea 3 – Configurar Azure Backup para la máquina virtual
 
-### 3.1 Habilitar copia de seguridad
-
-Desde la bóveda, seleccionamos **Agregar copia de seguridad** y definimos el tipo de carga de trabajo y recurso.
+Desde la Recovery Services Vault, seleccioné **Agregar copia de seguridad** y definí el tipo de carga de trabajo y el tipo de recurso a proteger.
 
 ![3.1](screenshots/3.1.png)
 
----
-
-### 3.2 Crear una nueva directiva
-
-Seleccionamos el subtipo de directiva **Estándar** y creamos una nueva política de copia de seguridad.
+Seleccioné el subtipo de directiva **Estándar** y creé una nueva política de copia de seguridad.
 
 ![3.2](screenshots/3.2.png)
 
----
+Configuré la nueva política con los siguientes valores:
 
-### 3.3 Configuración de la política de backup
-
-Definimos los siguientes valores:
-
-- Nombre: **az104-backup**
+- Nombre de la política: **az104-backup**
 - Frecuencia: **Diaria**
 - Hora: **00:00**
-- Zona horaria: local
-- Retención instantánea: **2 días**
+- Zona horaria: zona horaria local
+- Retención de instantáneas: **2 días**
 
 ![3.3](screenshots/3.3.png)
 
----
-
-### 3.4 Asociar la máquina virtual
-
-Seleccionamos la **VM0** creada anteriormente y aplicamos la política de copia de seguridad.
+A continuación, seleccioné la máquina virtual **VM0**, creada previamente, para aplicar la directiva de copia de seguridad.
 
 ![3.4](screenshots/3.4.png)
 
----
-
-### 3.5 Verificación en elementos protegidos
-
-En **Elementos protegidos → Elementos de copia de seguridad**, verificamos que la máquina virtual aparece listada.
+Tras revisar la configuración, creé el recurso y verifiqué que la máquina virtual aparecía en **Elementos protegidos → Elementos de copia de seguridad**.
 
 ![3.5](screenshots/3.5.png)
 
----
-
-### 3.6 Estado inicial de la copia
-
-Observamos que la VM aún no está protegida completamente porque todavía no se ha ejecutado la primera copia.
+Pude observar que la máquina virtual aún no estaba completamente protegida, ya que todavía no se había ejecutado la primera copia según la directiva.
 
 ![3.6](screenshots/3.6.png)
 
----
-
-### 3.7 Ejecutar copia de seguridad manual
-
-Accedemos a los detalles de la VM y seleccionamos **Copia de seguridad ahora**.
+Para acelerar el proceso, accedí a los detalles de la máquina virtual y ejecuté una **copia de seguridad manual**.
 
 ![3.7](screenshots/3.7.png)
 
----
-
-### 3.8 Estado final
-
-Tras aproximadamente **30–60 minutos**, la copia se completa correctamente y el estado aparece como **Superado**.
+Después de aproximadamente **30 a 60 minutos**, la copia de seguridad se completó correctamente y el estado de la última copia apareció como **Superado**.
 
 ![3.8](screenshots/3.8.png)
 
 ---
 
-## Tarea 4 – Monitorizar Azure Backup
+## Tarea 4 – Configurar monitorización de Azure Backup
 
-### 4.1 Crear una cuenta de almacenamiento
-
-Accedemos a **Storage accounts** y creamos una nueva cuenta.
+A continuación, fui a **Cuentas de almacenamiento** y creé una nueva cuenta.
 
 ![4.1](screenshots/4.1.png)
 
----
-
-### 4.2 Configuración de la cuenta
-
-Seleccionamos un **nombre único**, SKU estándar y **redundancia GRS**.
+Seleccioné un **nombre único**, el nivel estándar y configuré la **redundancia geográfica (GRS)**.
 
 ![4.2](screenshots/4.2.png)
 
----
-
-### 4.3 Crear la cuenta de almacenamiento
-
-Revisamos y creamos la cuenta.
+Revisé la configuración y creé la cuenta de almacenamiento.
 
 ![4.3](screenshots/4.3.png)
 
----
-
-### 4.4 Configuración de diagnósticos
-
-En la Recovery Services Vault, accedemos a **Supervisión → Configuración de diagnóstico**.
+Después regresé a la Recovery Services Vault y accedí a **Supervisión → Configuración de diagnóstico** para agregar una nueva configuración.
 
 ![4.4](screenshots/4.4.png)
 
----
+Creé una configuración llamada **Logs and Metrics to storage** y seleccioné las siguientes métricas y registros:
 
-### 4.5 Selección de métricas y logs
-
-Creamos una configuración llamada **Logs and Metrics to storage** y seleccionamos las métricas y registros necesarios.
+- Azure Backup Reporting Data  
+- Addon Azure Backup Job Data  
+- Addon Azure Backup Alert Data  
+- Azure Site Recovery Jobs  
+- Azure Site Recovery Events  
 
 ![4.5](screenshots/4.5.png)
 
----
-
-### 4.6 Destino de los datos
-
-Seleccionamos **Archivar en una cuenta de almacenamiento** y elegimos la cuenta creada anteriormente.
+Finalmente, configuré como destino la cuenta de almacenamiento creada anteriormente, seleccionando la opción **Archivar en una cuenta de almacenamiento**.
 
 ![4.6](screenshots/4.6.png)
 
 ---
 
-## Tarea 5 – Habilitar replicación de máquinas virtuales
+## Tarea 5 – Habilitar replicación con Azure Site Recovery
 
-### 5.1 Crear una segunda Recovery Services Vault
-
-Creamos una nueva bóveda en un **grupo de recursos diferente**.
+Para finalizar, creé una nueva **Recovery Services Vault** destinada a la replicación.
 
 ![5.1](screenshots/5.1.png)
 
----
-
-### 5.2 Seleccionar región de destino
-
-Seleccionamos una **región distinta** a la de la máquina virtual original.
+Seleccioné una **región de destino diferente** a la región original de la máquina virtual.
 
 ![5.2](screenshots/5.2.png)
 
----
+En los siguientes apartados dejé los valores por defecto, creé la **cuenta de automatización** y completé la configuración.
 
-### 5.3 Configuración final y replicación
-
-Dejamos los valores por defecto, creamos la **cuenta de automatización**, revisamos y habilitamos la replicación.
-
-En **Objetos protegidos → Elementos replicados**, verificamos que la sincronización ha comenzado.
+Una vez habilitada la replicación, accedí a **Objetos protegidos → Elementos replicados**, donde pude observar que la sincronización de la máquina virtual había comenzado correctamente.
 
 ![5.3](screenshots/5.3.png)
 
@@ -272,15 +171,7 @@ En **Objetos protegidos → Elementos replicados**, verificamos que la sincroniz
 
 ## Limpieza de recursos
 
-Al finalizar el laboratorio, eliminamos los grupos de recursos creados para evitar costes innecesarios.
+Para evitar costes innecesarios, eliminé los grupos de recursos creados durante el laboratorio, lo que eliminó automáticamente todos los recursos asociados.
 
----
-
-## Conclusión
-
-Este laboratorio demuestra cómo implementar:
-- Copias de seguridad a nivel de VM
-- Monitorización de Azure Backup
-- Recuperación ante desastres entre regiones
-
-Conceptos clave para escenarios reales de **continuidad de negocio** y para el examen **AZ-104**.
+Azure Portal:  
+Grupos de Recursos → Eliminar Grupo de Recursos
