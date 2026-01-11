@@ -33,15 +33,17 @@ Comencé accediendo al **Portal de Azure** y seleccionando **Implementar una pla
 
 Para el despliegue inicial de la máquina virtual utilicé una **plantilla ARM**, lo que permite definir la infraestructura como código y garantizar despliegues repetibles y consistentes.
 
-- 📄 [template.json](arm/template.json)  
+
 
 ![1.1](screenshots/1.1.png)
 
 A continuación, elegí la opción de crear una plantilla propia usando el **editor** y pegué la plantilla ARM correspondiente al laboratorio.
 
-- 📄 [parameters.json](arm/parameters.json)  
+- 📄 [template.json](arm/template.json)  
 
 ![1.2](screenshots/1.2.png)
+
+- 📄 [parameters.json](arm/parameters.json)
 
 Después cargué el archivo de **parámetros**, donde se definen valores como el nombre de la máquina virtual y las credenciales de acceso.
 
