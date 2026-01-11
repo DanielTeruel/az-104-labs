@@ -43,9 +43,9 @@ A continuación, elegí la opción de crear una plantilla propia usando el **edi
 
 ![1.2](screenshots/1.2.png)
 
-- 📄 [parameters.json](arm/parameters.json)
-
 Después cargué el archivo de **parámetros**, donde se definen valores como el nombre de la máquina virtual y las credenciales de acceso.
+
+- 📄 [parameters.json](arm/parameters.json)
 
 ![1.3](screenshots/1.3.png)
 
