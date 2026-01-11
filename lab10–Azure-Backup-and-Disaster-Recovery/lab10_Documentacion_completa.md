@@ -31,25 +31,36 @@ La organización necesita proteger una máquina virtual crítica frente a pérdi
 
 Comencé accediendo al **Portal de Azure** y seleccionando **Implementar una plantilla personalizada**.
 
-Para el despliegue inicial de la máquina virtual utilicé una **plantilla ARM**, lo que permite definir la infraestructura como código y garantizar despliegues repetibles y consistentes.
-
-
+Para el despliegue inicial de la máquina virtual utilicé una **plantilla ARM**, lo que permite definir la infraestructura como código (*Infrastructure as Code*) y garantizar despliegues **repetibles, consistentes y controlados**.
 
 ![1.1](screenshots/1.1.png)
 
-A continuación, elegí la opción de crear una plantilla propia usando el **editor** y pegué la plantilla ARM correspondiente al laboratorio.
+A continuación, seleccioné la opción **Crear tu propia plantilla en el editor** y cargué la plantilla ARM correspondiente al laboratorio.
 
-- 📄 [template.json](arm/template.json)  
+- 📄 [template.json](arm/template.json)
 
 ![1.2](screenshots/1.2.png)
 
-Después cargué el archivo de **parámetros**, donde se definen valores como el nombre de la máquina virtual y las credenciales de acceso.
+El archivo `template.json` define **la estructura de la infraestructura**, incluyendo:
+- Red virtual y subred
+- Interfaces de red y direcciones IP públicas
+- Grupo de seguridad de red (NSG)
+- Máquina virtual y sus características (SKU, imagen, tamaño)
+
+Después cargué el archivo de **parámetros**, donde se especifican los valores que pueden variar entre despliegues.
 
 - 📄 [parameters.json](arm/parameters.json)
 
 ![1.3](screenshots/1.3.png)
 
-Finalmente, revisé los detalles del despliegue, seleccioné una **contraseña segura** para la máquina virtual y lancé la implementación.
+El archivo `parameters.json` permite **separar la configuración de los valores**, facilitando la reutilización de la plantilla sin modificar su lógica.  
+Aquí se definen datos como:
+- Nombre de la máquina virtual
+- Tamaño de la VM
+- Red virtual y subred
+- Usuario administrador
+
+Finalmente, revisé los detalles del despliegue, seleccioné una **contraseña segura** para el acceso a la máquina virtual y lancé la implementación.
 
 ![1.4](screenshots/1.4.png)
 
