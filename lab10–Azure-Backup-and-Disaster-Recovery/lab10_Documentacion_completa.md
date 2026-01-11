@@ -163,15 +163,21 @@ Seleccioné una **región de destino diferente** a la región original de la má
 
 En los siguientes apartados dejé los valores por defecto, creé la **cuenta de automatización** y completé la configuración.
 
-Una vez habilitada la replicación, accedí a **Objetos protegidos → Elementos replicados**, donde pude observar que la sincronización de la máquina virtual había comenzado correctamente.
-
 ![5.3](screenshots/5.3.png)
+
+Una vez habilitada la replicación, accedí a **Objetos protegidos → Elementos replicados**, donde pude observar que la sincronización de la máquina virtual había comenzado correctamente.
 
 ---
 
-## Limpieza de recursos
+## Limpieza
 
-Para evitar costes innecesarios, eliminé los grupos de recursos creados durante el laboratorio, lo que eliminó automáticamente todos los recursos asociados.
+Para evitar costes innecesarios y configuraciones sobrantes, eliminé todos los recursos creados durante el laboratorio.
 
-Azure Portal:  
-Grupos de Recursos → Eliminar Grupo de Recursos
+La forma más sencilla de realizar la limpieza es eliminar el grupo de recursos completo.
+
+### Azure Portal
+Grupo de recursos → Eliminar grupo de recursos
+
+### Azure PowerShell
+```powershell
+Remove-AzResourceGroup -Name az104-RG10
