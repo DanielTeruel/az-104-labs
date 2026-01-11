@@ -9,10 +9,10 @@ Luego se implementan copias de seguridad a nivel de máquina virtual y se habili
 
 Para más información sobre la plantilla ARM utilizada en este laboratorio, revisa la carpeta **ARM Files** que incluye:
 
-* 📄 `template.json` – Define la infraestructura completa de la VM, red, NIC, PIP y NSG.
-* 📄 `parameters.json` – Archivo de parámetros que separa los valores de configuración del template, como nombres de VM, tamaño, red y usuario administrador.
-* 📄 `explicaciones.md` – Documentación **en español**, con explicación detallada de cada recurso y el flujo de despliegue.
-* 📄 `explanations.md` – Documentación **en inglés**, adaptada del archivo español para audiencias internacionales.
+* 📄 [template.json](arm/template.json) – Define la infraestructura completa de la VM, red, NIC, PIP y NSG.
+* 📄 [parameters.json](arm/parameters.json) – Archivo de parámetros que separa los valores de configuración del template, como nombres de VM, tamaño, red y usuario administrador.
+* 📄 [explicaciones.md](arm/explicaciones.md) – Documentación **en español**, con explicación detallada de cada recurso y el flujo de despliegue.
+* 📄 [explanations.md](arm/explanations.md) – Documentación **en inglés**, adaptada del archivo español para audiencias internacionales.
 
 ---
 
