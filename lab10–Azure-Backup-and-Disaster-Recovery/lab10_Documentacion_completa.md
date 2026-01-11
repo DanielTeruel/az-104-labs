@@ -39,19 +39,17 @@ A continuación, seleccioné la opción **Crear tu propia plantilla en el editor
 
 - 📄 [template.json](arm/template.json)
 
-![1.2](screenshots/1.2.png)
-
 El archivo `template.json` define **la estructura de la infraestructura**, incluyendo:
 - Red virtual y subred
 - Interfaces de red y direcciones IP públicas
 - Grupo de seguridad de red (NSG)
 - Máquina virtual y sus características (SKU, imagen, tamaño)
+  
+![1.2](screenshots/1.2.png)
 
 Después cargué el archivo de **parámetros**, donde se especifican los valores que pueden variar entre despliegues.
 
 - 📄 [parameters.json](arm/parameters.json)
-
-![1.3](screenshots/1.3.png)
 
 El archivo `parameters.json` permite **separar la configuración de los valores**, facilitando la reutilización de la plantilla sin modificar su lógica.  
 Aquí se definen datos como:
@@ -59,6 +57,8 @@ Aquí se definen datos como:
 - Tamaño de la VM
 - Red virtual y subred
 - Usuario administrador
+
+![1.3](screenshots/1.3.png)
 
 Finalmente, revisé los detalles del despliegue, seleccioné una **contraseña segura** para el acceso a la máquina virtual y lancé la implementación.
 
