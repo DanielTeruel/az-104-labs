@@ -31,6 +31,16 @@ La organización necesita proteger una máquina virtual crítica frente a pérdi
 
 Comencé accediendo al **Portal de Azure** y seleccionando **Implementar una plantilla personalizada**.
 
+Para el despliegue inicial de la máquina virtual utilicé una **plantilla ARM**, lo que permite definir la infraestructura como código y garantizar despliegues repetibles y consistentes.
+
+Los archivos utilizados en este laboratorio son:
+
+- 📄 [template.json](arm/template.json)  
+- 📄 [parameters.json](arm/parameters.json)  
+
+El archivo `template.json` define los recursos principales como la máquina virtual, red virtual, interfaz de red, dirección IP pública y grupo de seguridad de red.  
+El archivo `parameters.json` permite personalizar valores como el nombre de la VM, tamaño, red y credenciales sin modificar la plantilla principal.
+
 ![1.1](screenshots/1.1.png)
 
 A continuación, elegí la opción de crear una plantilla propia usando el **editor** y pegué la plantilla ARM correspondiente al laboratorio.
