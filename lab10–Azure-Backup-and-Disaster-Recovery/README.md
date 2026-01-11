@@ -35,14 +35,14 @@ This lab reflects a real-world **business continuity scenario**, where protectin
 * How to configure **cross-region replication** using **Azure Site Recovery**
 * Best practices for **resource cleanup** after testing
 
-## Full Documentation
-
-For step-by-step instructions with screenshots in **English**, see [explanations.md](arm/explanations.md)
-For the **Spanish version**, see [explicaciones.md](arm/explicaciones.md)
-
 ## ARM Templates
 
-The following files were used to deploy and configure the lab environment:
+The following ARM files were used to deploy and configure the lab environment:
 
 * 📄 [template.json](arm/template.json) – Defines the full infrastructure, including VM, network, NIC, public IP, and NSG
 * 📄 [parameters.json](arm/parameters.json) – Parameter file separating configuration values, including VM names, size, network, and admin user
+
+## Full Documentation
+
+For step-by-step instructions with screenshots in **English**, see [Lab10_Full_Documentation.md](lab10–Azure-Backup-and-Disaster-Recovery/Lab10_Full_Documentation.md)
+For the **Spanish version**, see [lab10_Documentacion_completa.md](lab10–Azure-Backup-and-Disaster-Recovery/lab10_Documentacion_completa.md)
