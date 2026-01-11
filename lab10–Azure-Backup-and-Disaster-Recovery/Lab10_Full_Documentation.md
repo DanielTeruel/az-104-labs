@@ -224,4 +224,3 @@ Resource Group → Delete Resource Group
 ```powershell
 Remove-AzResourceGroup -Name az104-RG10
 ```
-¿Quieres que haga eso también?
