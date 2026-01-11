@@ -11,7 +11,7 @@ Each lab includes documentation, screenshots, and configuration examples aligned
 
 The goal of this repository is to document my learning journey for the **AZ-104 certification**, focusing on:
 
-* Identity and access management (Azure AD & RBAC)
+* Identity and access management (Entra ID & RBAC)
 * Governance and compliance (Management Groups, Azure Policy, Tags, Locks)
 * Core Azure services (Virtual Machines, Storage, Web Apps)
 * High availability, scalability, and cost optimization
