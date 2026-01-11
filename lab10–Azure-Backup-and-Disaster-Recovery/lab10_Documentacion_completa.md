@@ -1,29 +1,57 @@
 # Lab 10 – Implementar Azure Backup y Recuperación ante Desastres (AZ-104)
 
 ## Resumen
+
 En este laboratorio trabajé con **Azure Backup y Azure Site Recovery** para implementar una solución de **protección de datos y recuperación ante desastres** en Azure. Durante la práctica:
 
-- Desplegué una máquina virtual usando una **plantilla ARM personalizada**.
-- Creé y configuré una **Recovery Services Vault**.
-- Implementé **copias de seguridad a nivel de máquina virtual** mediante Azure Backup.
-- Configuré **políticas de backup** con retención y ejecución programada.
-- Habilité **monitorización y diagnósticos** enviando logs y métricas a una cuenta de almacenamiento.
-- Configuré la **replicación entre regiones** usando Azure Site Recovery.
+* Desplegué una máquina virtual usando una **plantilla ARM personalizada**.
+* Creé y configuré una **Recovery Services Vault**.
+* Implementé **copias de seguridad a nivel de máquina virtual** mediante Azure Backup.
+* Configuré **políticas de backup** con retención y ejecución programada.
+* Habilité **monitorización y diagnósticos** enviando logs y métricas a una cuenta de almacenamiento.
+* Configuré la **replicación entre regiones** usando Azure Site Recovery.
 
 Este laboratorio me permitió entender cómo proteger cargas de trabajo críticas y preparar un entorno para escenarios reales de **continuidad de negocio y recuperación ante desastres** en Azure.
 
 ## Escenario de Negocio
+
 La organización necesita proteger una máquina virtual crítica frente a pérdidas de datos, eliminaciones accidentales y fallos regionales. Para ello, se requiere una solución que permita realizar copias de seguridad automáticas, conservar los datos durante un período definido y replicar la infraestructura a una región secundaria para recuperación ante desastres.
 
 ## Objetivos del Laboratorio
 
-- Desplegar una máquina virtual mediante una plantilla ARM.
-- Crear y configurar una Recovery Services Vault.
-- Configurar Azure Backup para una máquina virtual.
-- Crear y aplicar una directiva de copia de seguridad.
-- Monitorizar Azure Backup mediante diagnósticos y cuentas de almacenamiento.
-- Implementar replicación entre regiones con Azure Site Recovery.
-- Aplicar buenas prácticas de limpieza de recursos.
+* Desplegar una máquina virtual mediante una plantilla ARM.
+* Crear y configurar una Recovery Services Vault.
+* Configurar Azure Backup para una máquina virtual.
+* Crear y aplicar una directiva de copia de seguridad.
+* Monitorizar Azure Backup mediante diagnósticos y cuentas de almacenamiento.
+* Implementar replicación entre regiones con Azure Site Recovery.
+* Aplicar buenas prácticas de limpieza de recursos.
+
+---
+
+## Archivos del Laboratorio
+
+Para este laboratorio se utilizaron los siguientes archivos de soporte, que permiten **desplegar la infraestructura como código** y entender en detalle cada recurso:
+
+* 📄 [template.json](arm/template.json) – Plantilla ARM que define la infraestructura completa, incluyendo:
+
+  * Red virtual y subred
+  * Interfaces de red y direcciones IP públicas
+  * Grupo de seguridad de red (NSG)
+  * Máquina virtual y sus características (SKU, imagen, tamaño)
+
+* 📄 [parameters.json](arm/parameters.json) – Archivo de parámetros que permite **separar la configuración de los valores** del template, definiendo:
+
+  * Nombre de la máquina virtual
+  * Tamaño de la VM
+  * Red virtual y subred
+  * Usuario administrador
+
+* 📄 [explicaciones.md](arm/explicaciones.md) – Documentación **en español**, con explicación detallada de cada recurso y el flujo de despliegue de la infraestructura.
+
+* 📄 [explanations.md](arm/explanations.md) – Documentación **en inglés**, adaptada del archivo español para audiencias internacionales.
+
+> Estos archivos permiten que el despliegue sea **reproducible, consistente y fácil de entender**, ideal para repositorios de GitHub y documentación profesional.
 
 ---
 
