@@ -45,4 +45,4 @@ The following ARM files were used to deploy and configure the lab environment:
 ## Full Documentation
 
 For step-by-step instructions with screenshots in **English**, see [Lab10_Full_Documentation.md](Lab10_Full_Documentation.md)       
-For the **Spanish version**, see [lab10_Documentacion_completa.md](lab10_Documentacion_completa.md)
+For the **Spanish version**, see [lab10_Documentacion_completa.md](Lab10_Documentacion_completa.md)
