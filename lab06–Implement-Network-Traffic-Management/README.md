@@ -9,6 +9,12 @@ In this lab, I explored **network traffic management in Azure**, implementing an
 
 The lab included deploying a base infrastructure using **ARM templates**, balancing HTTP traffic between multiple virtual machines, and configuring **route-based routing rules** to serve different types of content from specific servers.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 06 Architecture](./screenshots/lab06-lb-architecture.png)
+
 ## Business Scenario
 
 The organization has a public website receiving traffic from the Internet.
