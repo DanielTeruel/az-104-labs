@@ -25,6 +25,12 @@ A solution was required that allows:
 
 This lab reflects a real-world **business continuity scenario**, where protecting and restoring critical workloads is essential to minimize the impact of incidents.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 10 Architecture](./screenshots/lab10-architecture.png)
+
 ## What I Learned
 
 * How to deploy infrastructure using **ARM templates**
