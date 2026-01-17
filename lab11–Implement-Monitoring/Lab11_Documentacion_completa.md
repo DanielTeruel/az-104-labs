@@ -5,6 +5,9 @@
 En este laboratorio se exploran las capacidades de **Azure Monitor** para supervisar recursos en Azure, crear alertas y notificar eventos críticos a los equipos de operaciones.
 
 Se despliega una infraestructura base utilizando una **plantilla ARM**, que incluye una máquina virtual y su red asociada.  
+
+- 📄 [template.json](lab11–Implement-Monitoring/arm/template.json)
+
 Posteriormente, se habilita **VM Insights**, se crean **reglas de alertas**, **grupos de acciones**, se prueban notificaciones reales y se configuran **reglas de procesamiento de alertas** para suprimir avisos durante ventanas de mantenimiento.
 
 Finalmente, se utilizan **consultas KQL en Azure Monitor Logs** para analizar métricas y eventos capturados por la plataforma.
@@ -47,7 +50,7 @@ Comencé accediendo al **Portal de Azure** y seleccionando **Implementar una pla
 
 A continuación, creé una plantilla personalizada utilizando el **editor** e implementé la plantilla ARM correspondiente al laboratorio.
 
-- 📄 [az104-11-vm-template.json](arm/az104-11-vm-template.json)
+- 📄 [template.json](lab11–Implement-Monitoring/arm/template.json)
 
 ![1.2](screenshots/1.2.png)
 
