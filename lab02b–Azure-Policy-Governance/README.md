@@ -6,6 +6,12 @@ Notes and documentation for Lab 02b of AZ-104.
 This lab focuses on implementing governance in Azure using **Azure Policy**, **resource tagging**, and **resource locks**.  
 The goal was to enforce organizational standards, improve cost tracking, and protect resources from accidental changes.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 02b Architecture](./screenshots/lab02b-architecture.png)
+
 ## Business Scenario
 After a recent audit, the organization identified multiple Azure resources without proper ownership or cost information.  
 To address this, governance controls were implemented to enforce and remediate resource tagging and to protect critical resources using locks.
