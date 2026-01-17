@@ -8,6 +8,12 @@ The lab covers creating an **App Service**, configuring staging and production s
 
 The objective was to explore how Azure Web Apps can be deployed, tested, and automatically scaled in a real-world scenario while ensuring high availability and efficient performance.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 09a Architecture](./screenshots/lab09a-architecture.png)
+
 ## Business Scenario
 The organization wants to migrate its websites from an **on-premises datacenter** to Azure to reduce hardware costs and improve scalability.  
 The websites are currently running on Windows servers with PHP, and the hardware is nearing end-of-life.
