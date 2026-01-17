@@ -51,7 +51,7 @@ Comencé accediendo al **Portal de Azure** y seleccionando **Implementar una pla
 
 A continuación, creé una plantilla personalizada utilizando el **editor** e implementé la plantilla ARM correspondiente al laboratorio.
 
-- 📄 [template.json](https://github.com/DanielTeruel/az-104-labs/blob/main/lab11%E2%80%93Implement-Monitoring/arm/template.json)
+- 📄 [template.json](arm/template.json)
 
 Esta plantilla define la infraestructura necesaria para el laboratorio, incluyendo:
 - Máquina virtual de prueba
