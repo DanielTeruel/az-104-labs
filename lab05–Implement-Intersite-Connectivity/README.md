@@ -8,6 +8,12 @@ In this lab, I worked with **Azure Virtual Network connectivity** to enable comm
 
 The objective was to understand how to connect segmented networks in Azure and how to control routing between subnets and virtual networks.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 05 Architecture](./screenshots/lab05-architecture.png)
+
 ## Business Scenario
 
 The organization separates core services from other departments, such as the manufacturing area.
