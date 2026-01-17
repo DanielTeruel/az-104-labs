@@ -9,6 +9,12 @@ The lab covers deploying a **virtual machine** using an **ARM template**, creati
 
 The objective was to explore how to protect critical workloads and prepare an environment for **real-world business continuity and disaster recovery scenarios** in Azure.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 10 Architecture](./screenshots/lab10-architecture.png)
+
 ## Business Scenario
 
 The organization needs to protect a **critical virtual machine** against:
