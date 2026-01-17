@@ -42,4 +42,4 @@ The following ARM file was used to deploy the lab environment:
 ## Full Documentation
 
 For step-by-step instructions with screenshots in **English**, see [Lab11_Full_Documentation.md](Lab11_Full_Documentation.md)     
-For the **Spanish version**, see [lab11_Documentacion_completa.md](lab11_Documentacion_completa.md)
+For the **Spanish version**, see [Lab11_Documentacion_completa.md](Lab11_Documentacion_completa.md)
