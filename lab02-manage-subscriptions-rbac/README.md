@@ -6,6 +6,12 @@ Notes and scripts for Lab 02 of AZ-104.
 This lab focuses on managing Azure subscriptions and implementing Role-Based Access Control (RBAC) using Management Groups.  
 The goal was to apply the principle of least privilege while centralizing access management.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 02 Architecture](./screenshots/lab02-manage-subscriptions-rbac.png)
+
 ## Business Scenario
 A centralized Help Desk team is responsible for managing virtual machines and creating support requests, but they cannot register new Azure resource providers.
 
