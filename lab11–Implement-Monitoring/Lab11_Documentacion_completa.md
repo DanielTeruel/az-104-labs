@@ -6,7 +6,7 @@ En este laboratorio se exploran las capacidades de **Azure Monitor** para superv
 
 Se despliega una infraestructura base utilizando una **plantilla ARM**, que incluye una máquina virtual y su red asociada.  
 
-- 📄 [template.json](lab11–Implement-Monitoring/arm/template.json)
+- 📄 [template.json](/arm/template.json)
 
 Posteriormente, se habilita **VM Insights**, se crean **reglas de alertas**, **grupos de acciones**, se prueban notificaciones reales y se configuran **reglas de procesamiento de alertas** para suprimir avisos durante ventanas de mantenimiento.
 
