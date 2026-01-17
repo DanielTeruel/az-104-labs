@@ -8,6 +8,12 @@ The lab covers deploying VMs across **Availability Zones**, scaling compute and 
 
 The objective was to explore how Azure Virtual Machines can be deployed, scaled, and automated in a real-world scenario while ensuring high availability and efficiency.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 08 Architecture](./screenshots/lab08-vm-architecture.png)
+
 ## Business Scenario
 The organization wants to evaluate different strategies to deploy virtual machines in Azure.  
 First, individual virtual machines are deployed across **Availability Zones** to achieve high availability with a 99.99% SLA.  
