@@ -26,56 +26,62 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 ### 🔐 Identity, Access & Governance
 
 * **Lab 02 – Manage Subscriptions and RBAC**
-  Centralized access control using Management Groups and Role-Based Access Control.  
+  Centralized access control using Management Groups and Role-Based Access Control.
   👉 [`lab02-manage-subscriptions-rbac`](./lab02-manage-subscriptions-rbac)
 
 * **Lab 02b – Azure Policy & Governance**
-  Governance with Azure Policy, resource tagging, and resource locks.  
+  Governance with Azure Policy, resource tagging, and resource locks.
   👉 [`lab02b–Azure-Policy-Governance`](./lab02b–Azure-Policy-Governance)
 
 ### 📄 Infrastructure as Code
 
 * **Lab 03 – Azure ARM Templates**
-  Deployment of Azure resources using ARM templates.  
+  Deployment of Azure resources using ARM templates.
   👉 [`lab03–Azure-ARM-Templates`](./lab03–Azure-ARM-Templates)
 
 ### 🌐 Networking
 
 * **Lab 04 – Implement Virtual Networking**
-  Creating VNets, subnets, IP addressing, and network connectivity.  
+  Creating VNets, subnets, IP addressing, and network connectivity.
   👉 [`lab04-Implement-Virtual-Networking`](./lab04-Implement-Virtual-Networking)
 
 * **Lab 05 – Implement Intersite Connectivity**
-  VPN gateways, local network gateways, and site-to-site connectivity.  
+  VPN gateways, local network gateways, and site-to-site connectivity.
   👉 [`lab05-Implement-Intersite-Connectivity`](./lab05-Implement-Intersite-Connectivity)
 
 * **Lab 06 – Implement Network Traffic Management**
-  Load Balancer, Application Gateway, and traffic routing scenarios.  
+  Load Balancer, Application Gateway, and traffic routing scenarios.
   👉 [`lab06-Implement-Network-Traffic-Management`](./lab06-Implement-Network-Traffic-Management)
 
 ### 💾 Storage
 
 * **Lab 07 – Manage Azure Storage**
-  Azure Storage Accounts, Blob & File storage, SAS, lifecycle management, and network security.  
+  Azure Storage Accounts, Blob & File storage, SAS, lifecycle management, and network security.
   👉 [`lab07–Manage-Azure-Storage`](./lab07–Manage-Azure-Storage)
 
 ### 🖥️ Compute
 
 * **Lab 08 – Manage Virtual Machines**
-  Virtual Machines, Availability Zones, VM Scale Sets (VMSS), autoscaling, and VM creation using Portal, PowerShell, and Azure CLI.  
+  Virtual Machines, Availability Zones, VM Scale Sets (VMSS), autoscaling, and VM creation using Portal, PowerShell, and Azure CLI.
   👉 [`lab08–Manage-Virtual-Machines`](./lab08–Manage-Virtual-Machines)
 
 ### 🌐 Web Apps
 
 * **Lab 09a – Azure Web Apps**
-  Implementation and management of Azure Web Apps, deployment slots, continuous deployment from GitHub, slot swapping, auto-scaling, and load testing with Azure Load Testing.  
+  Implementation and management of Azure Web Apps, deployment slots, continuous deployment from GitHub, slot swapping, auto-scaling, and load testing with Azure Load Testing.
   👉 [`lab09a–Azure-Web-Apps`](./lab09a–Azure-Web-Apps)
 
 ### 💾 Backup & Disaster Recovery
 
 * **Lab 10 – Azure Backup and Disaster Recovery**
-  VM backup using Azure Backup, configuring Recovery Services Vault, backup policies, monitoring & diagnostics, and cross-region replication with Azure Site Recovery.  
+  VM backup using Azure Backup, configuring Recovery Services Vault, backup policies, monitoring & diagnostics, and cross-region replication with Azure Site Recovery.
   👉 [`lab10–Azure-Backup-and-Disaster-Recovery`](./lab10–Azure-Backup-and-Disaster-Recovery)
+
+### 📊 Monitoring & Alerts
+
+* **Lab 11 – Implement Monitoring with Azure Monitor**
+  Proactive monitoring of Azure resources, enabling VM Insights, creating alert rules and action groups, testing alerts, configuring alert processing rules for maintenance windows, and querying metrics and events using Azure Monitor Logs (KQL).
+  👉 [`lab11–Implement-Monitoring`](./lab11–Implement-Monitoring)
 
 ---
 
@@ -91,6 +97,8 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 * Azure Load Testing
 * Azure Backup & Recovery Services Vault
 * Azure Site Recovery
+* **Azure Monitor & VM Insights**
+* **Azure Monitor Alerts, Action Groups, and KQL Queries**
 
 ---
 
