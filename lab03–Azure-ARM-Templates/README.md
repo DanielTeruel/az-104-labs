@@ -10,6 +10,12 @@ The lab focused on deploying managed disks in Azure and covered:
 
 This exercise provides hands-on experience with infrastructure-as-code (IaC) practices, improving deployment consistency and reducing human errors.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 03 Architecture](./screenshots/lab03-architecture.png)
+
 ## Business Scenario
 The organization aims to simplify and standardize resource deployments in Azure. By automating deployments with ARM and Bicep templates, teams can reduce administrative overhead, ensure consistent configurations, and deploy resources quickly across environments.
 
