@@ -22,7 +22,7 @@ A solution was needed that allows:
 
 This lab represents a real-world **proactive monitoring scenario**, essential to maintain stability, security, and operational awareness in production environments.
 
-## 🏗 Architecture Diagram
+## Architecture Diagram
 
 The following diagram shows the architecture deployed in this lab:
 
