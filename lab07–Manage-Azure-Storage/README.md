@@ -7,6 +7,12 @@ In this lab, I worked with **Azure Storage** to create and configure storage acc
 
 The objective was to explore how Azure Storage can be secured, optimized for cost, and integrated into a governance and networking strategy.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 07 Architecture](./screenshots/lab07-architecture.png)
+
 ## Business Scenario
 The organization stores a large amount of data that is not frequently accessed and wants to reduce storage costs by using lower-cost access tiers.  
 At the same time, it is necessary to secure access to data using network restrictions, authentication mechanisms, and immutable storage policies, and to evaluate Azure Files as a replacement for on-premises file shares.
