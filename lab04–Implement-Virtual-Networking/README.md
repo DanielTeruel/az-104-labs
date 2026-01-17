@@ -8,6 +8,12 @@ In this lab, I worked with **Azure Virtual Networking** to design and implement 
 
 The objective was to understand how to build a scalable network architecture in Azure, secure network traffic, and implement name resolution for both public and private environments.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 04 Architecture](./screenshots/lab04-architecture.png)
+
 ## Business Scenario
 
 The organization is planning a large-scale network infrastructure to support current workloads and future growth.
