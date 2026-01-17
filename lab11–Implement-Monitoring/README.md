@@ -8,6 +8,12 @@ In this lab, I explored **Azure Monitor** to implement **proactive monitoring** 
 
 The goal was to understand how to monitor Azure workloads in real time, detect critical events, notify operations teams, and analyze metrics and logs for operational insights.
 
+## Architecture Diagram
+
+The following diagram shows the architecture deployed in this lab:
+
+![Lab 11 Architecture](./screenshots/lab11-architecture.png)
+
 ## Business Scenario
 
 The organization has migrated its infrastructure to Azure and requires a **monitoring solution** to ensure administrators are notified of critical changes, such as **virtual machine deletions**.
