@@ -10,7 +10,7 @@ The goal was to apply the principle of least privilege while centralizing access
 
 The following diagram shows the architecture deployed in this lab:
 
-![Lab 02 Architecture](./screenshots/lab02-manage-subscriptions-rbac.png)
+![Lab 02a Architecture](./screenshots/lab02a-architecture.png)
 
 ## Business Scenario
 A centralized Help Desk team is responsible for managing virtual machines and creating support requests, but they cannot register new Azure resource providers.
