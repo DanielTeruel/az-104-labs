@@ -51,6 +51,11 @@ The following ARM file was used to deploy the lab environment:
 
 * 📄 [template.json](arm/template.json) – Defines the infrastructure including a virtual machine, network, NIC, public IP, and monitoring configuration
 
+A detailed explanation of the ARM template used in this lab is available here:
+
+- 📄 [ARM Template Explained (English)](arm/explanations.md)
+- 📄 [ARM Template Explicado (Español)](arm/explicaciones.md)
+
 ## Full Documentation
 
 For step-by-step instructions with screenshots in **English**, see [Lab11_Full_Documentation.md](Lab11_Full_Documentation.md)     
