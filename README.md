@@ -1,23 +1,26 @@
 # AZ-104 Labs – Microsoft Azure Administrator
 
-Hands-on labs and notes following the **AZ-104 Microsoft Azure Administrator** learning path.
+Hands-on labs aligned with the **AZ-104 Microsoft Azure Administrator certification**.
 
 This repository contains **practical, step-by-step labs** designed to build real-world Azure administration skills.
 Each lab includes documentation, screenshots, and configuration examples aligned with the official AZ-104 objectives.
+
+📌 I completed these labs as part of my preparation for the **Microsoft Certified: Azure Administrator Associate (AZ-104)** certification.
 
 ---
 
 ## 📘 About This Repository
 
-The goal of this repository is to document my learning journey for the **AZ-104 certification**, focusing on:
+The goal of this repository is to document **hands-on Azure administration experience** across the core areas covered by AZ-104, including:
 
 * Identity and access management (Entra ID & RBAC)
 * Governance and compliance (Management Groups, Azure Policy, Tags, Locks)
 * Core Azure services (Virtual Machines, Storage, Web Apps)
 * High availability, scalability, and cost optimization
+* Monitoring, alerts, and operational visibility
 * Hands-on experience using **Azure Portal, PowerShell, and Azure CLI**
 
-All labs are structured to simulate **real enterprise scenarios**, not just exam theory.
+All labs are structured to simulate **real enterprise scenarios**, not just exam preparation.
 
 ---
 
@@ -25,62 +28,76 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 
 ### 🔐 Identity, Access & Governance
 
-* **Lab 02 – Manage Subscriptions and RBAC**  
-  Centralized access control using Management Groups and Role-Based Access Control.  
+* **Lab 02 – Manage Subscriptions and RBAC**
+  Centralized access control using Management Groups and Role-Based Access Control.
   👉 [`lab02-manage-subscriptions-rbac`](./lab02-manage-subscriptions-rbac)
 
-* **Lab 02b – Azure Policy & Governance**  
-  Governance with Azure Policy, resource tagging, and resource locks.  
+* **Lab 02b – Azure Policy & Governance**
+  Governance with Azure Policy, resource tagging, and resource locks.
   👉 [`lab02b–Azure-Policy-Governance`](./lab02b–Azure-Policy-Governance)
+
+---
 
 ### 📄 Infrastructure as Code
 
-* **Lab 03 – Azure ARM Templates**  
-  Deployment of Azure resources using ARM templates.  
+* **Lab 03 – Azure ARM Templates**
+  Deployment of Azure resources using ARM templates.
   👉 [`lab03–Azure-ARM-Templates`](./lab03–Azure-ARM-Templates)
+
+---
 
 ### 🌐 Networking
 
-* **Lab 04 – Implement Virtual Networking**  
-  Creating VNets, subnets, IP addressing, and network connectivity.  
+* **Lab 04 – Implement Virtual Networking**
+  Creating VNets, subnets, IP addressing, and network connectivity.
   👉 [`lab04-Implement-Virtual-Networking`](./lab04-Implement-Virtual-Networking)
 
-* **Lab 05 – Implement Intersite Connectivity**  
-  VPN gateways, local network gateways, and site-to-site connectivity.  
+* **Lab 05 – Implement Intersite Connectivity**
+  VPN gateways, local network gateways, and site-to-site connectivity.
   👉 [`lab05-Implement-Intersite-Connectivity`](./lab05-Implement-Intersite-Connectivity)
 
-* **Lab 06 – Implement Network Traffic Management**  
-  Load Balancer, Application Gateway, and traffic routing scenarios.  
+* **Lab 06 – Implement Network Traffic Management**
+  Load Balancer, Application Gateway, and traffic routing scenarios.
   👉 [`lab06-Implement-Network-Traffic-Management`](./lab06-Implement-Network-Traffic-Management)
+
+---
 
 ### 💾 Storage
 
-* **Lab 07 – Manage Azure Storage**  
-  Azure Storage Accounts, Blob & File storage, SAS, lifecycle management, and network security.  
+* **Lab 07 – Manage Azure Storage**
+  Azure Storage Accounts, Blob & File storage, SAS, lifecycle management, and network security.
   👉 [`lab07–Manage-Azure-Storage`](./lab07–Manage-Azure-Storage)
+
+---
 
 ### 🖥️ Compute
 
-* **Lab 08 – Manage Virtual Machines**  
-  Virtual Machines, Availability Zones, VM Scale Sets (VMSS), autoscaling, and VM creation using Portal, PowerShell, and Azure CLI.  
+* **Lab 08 – Manage Virtual Machines**
+  Virtual Machines, Availability Zones, VM Scale Sets (VMSS), autoscaling, and VM creation using Portal, PowerShell, and Azure CLI.
   👉 [`lab08–Manage-Virtual-Machines`](./lab08–Manage-Virtual-Machines)
+
+---
 
 ### 🌐 Web Apps
 
-* **Lab 09a – Azure Web Apps**  
-  Implementation and management of Azure Web Apps, deployment slots, continuous deployment from GitHub, slot swapping, auto-scaling, and load testing with Azure Load Testing.  
+* **Lab 09a – Azure Web Apps**
+  Implementation and management of Azure Web Apps, deployment slots, continuous deployment from GitHub, slot swapping, auto-scaling, and load testing with Azure Load Testing.
   👉 [`lab09a–Azure-Web-Apps`](./lab09a–Azure-Web-Apps)
+
+---
 
 ### 💾 Backup & Disaster Recovery
 
-* **Lab 10 – Azure Backup and Disaster Recovery**  
-  VM backup using Azure Backup, configuring Recovery Services Vault, backup policies, monitoring & diagnostics, and cross-region replication with Azure Site Recovery.  
+* **Lab 10 – Azure Backup and Disaster Recovery**
+  VM backup using Azure Backup, configuring Recovery Services Vault, backup policies, monitoring & diagnostics, and cross-region replication with Azure Site Recovery.
   👉 [`lab10–Azure-Backup-and-Disaster-Recovery`](./lab10–Azure-Backup-and-Disaster-Recovery)
+
+---
 
 ### 📊 Monitoring & Alerts
 
-* **Lab 11 – Implement Monitoring with Azure Monitor**  
-  Proactive monitoring of Azure resources, enabling VM Insights, creating alert rules and action groups, testing alerts, configuring alert processing rules for maintenance windows, and querying metrics and events using Azure Monitor Logs (KQL).  
+* **Lab 11 – Implement Monitoring with Azure Monitor**
+  Proactive monitoring of Azure resources, enabling VM Insights, creating alert rules and action groups, testing alerts, configuring alert processing rules for maintenance windows, and querying metrics and events using Azure Monitor Logs (KQL).
   👉 [`lab11–Implement-Monitoring`](./lab11–Implement-Monitoring)
 
 ---
@@ -106,10 +123,10 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 
 These labs are designed to:
 
-* Reinforce **practical Azure administration skills**
+* Demonstrate **practical Azure administration skills**
 * Serve as **technical documentation and portfolio**
-* Prepare for **real-world Azure environments**
-* Support preparation for the **AZ-104 certification exam**
+* Simulate **real-world enterprise scenarios**
+* Complement the knowledge required for the **AZ-104 certification**
 
 ---
 
@@ -124,13 +141,14 @@ Most labs include:
 
 ## 🚀 Next Steps
 
-Future labs will expand into:
+Future projects will expand into more advanced Azure architecture topics:
 
-* Advanced networking
-* Monitoring and alerting
-* Backup and disaster recovery enhancements
-* Security and compliance scenarios
+* Enterprise **Hub-and-Spoke network architecture**
+* **On-premises to Azure migration scenarios**
+* Infrastructure as Code with **Bicep**
+* Security and compliance implementations
+* Advanced monitoring and operational automation
 
 ---
 
-📌 *This repository is continuously updated as I progress through the AZ-104 learning path.*
+📌 *This repository documents the hands-on labs completed during my journey to becoming a Microsoft Certified Azure Administrator.*
