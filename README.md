@@ -46,15 +46,15 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 
 * **Lab 04 – Implement Virtual Networking**  
   Creating VNets, subnets, IP addressing, and network connectivity.  
-  👉 [`lab04-Implement-Virtual-Networking`](./lab04-Implement-Virtual-Networking)
+  👉 [AZ-104 Lab 04 – Implement Virtual Networking](https://github.com/DanielTeruel/az-104-labs/tree/main/lab04–Implement-Virtual-Networking)
 
 * **Lab 05 – Implement Intersite Connectivity**  
   VPN gateways, local network gateways, and site-to-site connectivity.  
-  👉 [`lab05-Implement-Intersite-Connectivity`](./lab05-Implement-Intersite-Connectivity)
+  👉 [AZ-104 Lab 05 – Implement Intersite Connectivity](https://github.com/DanielTeruel/az-104-labs/tree/main/lab05–Implement-Intersite-Connectivity)
 
 * **Lab 06 – Implement Network Traffic Management**  
   Load Balancer, Application Gateway, and traffic routing scenarios.  
-  👉 [`lab06-Implement-Network-Traffic-Management`](./lab06-Implement-Network-Traffic-Management)
+  👉 [AZ-104 Lab 06 – Implement Network Traffic Management](https://github.com/DanielTeruel/az-104-labs/tree/main/lab06–Implement-Network-Traffic-Management)
 
 ### 💾 Storage
 
