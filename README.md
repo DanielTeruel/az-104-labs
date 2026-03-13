@@ -29,9 +29,8 @@ All labs are structured to simulate **real enterprise scenarios**, not just exam
 ### 🔐 Identity, Access & Governance
 
 * **Lab 02 – Manage Subscriptions and RBAC**
-  Centralized access control using Management Groups and Role-Based Access Control.
-
-   👉 [`lab02-manage-subscriptions-rbac`](./lab02-manage-subscriptions-rbac)
+  Centralized access control using Management Groups and Role-Based Access Control.     
+👉 [`lab02-manage-subscriptions-rbac`](./lab02-manage-subscriptions-rbac)
 
 * **Lab 02b – Azure Policy & Governance**
   Governance with Azure Policy, resource tagging, and resource locks.
